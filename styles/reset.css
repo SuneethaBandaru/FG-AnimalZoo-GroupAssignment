@@ -1,0 +1,45 @@
+/*
+ * A bare minimum modern CSS reset.
+ * Focuses on box-sizing, removing default margin, and basic body defaults.
+ */
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin from all elements */
+* {
+  margin: 0;
+}
+
+/* 3. Set core body defaults for a consistent base */
+body {
+  min-height: 100vh; /* Ensure body takes up at least the full viewport height */
+  line-height: 1.5; /* Improve readability */
+  -webkit-font-smoothing: antialiased; /* Better font rendering on macOS/iOS */
+}
+
+/* 4. Remove list styles on ul and ol elements */
+ul,
+ol {
+  list-style: none;
+  padding: 0; /* Ensures lists start flush left */
+}
+
+/* 5. Make images responsive and block-level */
+img {
+  max-width: 100%;
+  display: block;
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
