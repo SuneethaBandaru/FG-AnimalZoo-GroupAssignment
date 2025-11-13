@@ -107,14 +107,13 @@ footer {
     position: absolute;
     top: 100%;
     right: 0;
-    width: 50%;
+    width: 100%;
     /* only right side */
     background-color: #2e8b57;
     flex-direction: column;
     display: none;
     border-radius: 0 0 0 10px;
     overflow: hidden;
-    z-index: 10;
   }
 
   .nav-links li a {
@@ -123,7 +122,7 @@ footer {
   }
 
   /* Show menu when checked */
-  .menu-toggle:checked~.nav-links {
+  .menu-toggle:checked ~ .nav-links {
     display: flex;
   }
 }
