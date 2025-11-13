@@ -1,15 +1,44 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Animal Zoo</title>
-    <link rel="stylesheet" href="./styles/common.css" />
-    <script type="module" src="./scripts/home.js" defer></script>
+    <script type="module" src="./scripts/home.js"></script>
+    <title>Zoo park</title>
   </head>
   <body>
-    <header class="Header">
-      <h1>welcome to devloper branch</h1>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img
+            width="80"
+            height="80"
+            src="./images/logo.png"
+            alt="Animals logo"
+          />
+        </div>
+        <!-- Hamburger menu -->
+        <input
+          type="checkbox"
+          name="menu-toggle"
+          id="menu-toggle"
+          class="menu-toggle"
+        />
+        <label for="menu-toggle" class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="./pages/birds.html">Birds</a></li>
+          <li><a href="./pages/mammals.html">Mammals</a></li>
+          <li><a href="./pages/reptiles.html">Reptiles</a></li>
+        </ul>
+      </nav>
     </header>
+
+    
+
   </body>
 </html>
