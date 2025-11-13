@@ -17,8 +17,12 @@ body {
   align-items: center;
   padding: 0.5rem 1rem;
   background-color: #2e8b57;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   color: white;
-  position: relative;
+  /*position: relative;*/
 }
 
 .logo img {
@@ -64,6 +68,7 @@ body {
   background-color: white;
   border-radius: 2px;
 }
+
 /* ================== Footer ================== */
 footer {
   background-color: #2e8b57;
@@ -74,6 +79,7 @@ footer {
   align-items: center;
   flex-wrap: wrap;
 }
+
 .footer .logo img {
   width: 110px;
   height: 110px;
@@ -84,9 +90,6 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   gap: 10px;
-}
-
-.socialmedia_icons img {
 }
 
 .address a {
@@ -106,7 +109,7 @@ footer {
     right: 0;
     width: 50%;
     /* only right side */
-    background-color: #333;
+    background-color: #2e8b57;
     flex-direction: column;
     display: none;
     border-radius: 0 0 0 10px;
@@ -120,7 +123,7 @@ footer {
   }
 
   /* Show menu when checked */
-  .menu-toggle:checked ~ .nav-links {
+  .menu-toggle:checked~.nav-links {
     display: flex;
   }
 }
