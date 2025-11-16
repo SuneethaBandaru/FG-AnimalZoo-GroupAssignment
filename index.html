@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/reset.css" />
     <link rel="stylesheet" href="./styles/common.css" />
     <link rel="stylesheet" href="./styles/index.css" />
     <script src="./scripts/data.js"></script>
@@ -42,7 +43,22 @@
         </ul>
       </nav>
     </header>
-    <main></main>
+    <main>
+      <!-- Side bar -->
+      <aside class="sidebar">
+        <h1>Animals</h1>
+        <ul id="animals-list">
+          <!-- Create content using js from index.js -->
+        </ul>
+      </aside>
+      <div class="container">
+        <!-- Selected animal information -->
+        <div class="animal-card"></div>
+
+        <!-- Show event details -->
+        <div class="event-card"></div>
+      </div>
+    </main>
     <footer class="footer">
       <div class="logo">
         <a href="index.html">
