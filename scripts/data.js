@@ -22,7 +22,6 @@ const BIRDS = [
     size: "25-30 cm long, 75-157g",
     lifespan: "15-20 years in wild, up to 30 years in captivity",
     conservation: "Least Concern",
-    emoji: "🦜",
   },
   {
     name: "Emu",
@@ -35,7 +34,6 @@ const BIRDS = [
     size: "1.5-1.9 meters tall, 18-60 kg",
     lifespan: "10-20 years in wild, up to 35 years in captivity",
     conservation: "Least Concern",
-    emoji: "🦃",
   },
 ];
 
@@ -51,7 +49,6 @@ const MAMMALS = [
     size: "1.3-1.6 meters tall, 40-90 kg",
     lifespan: "6-8 years in wild, up to 20 years in captivity",
     conservation: "Least Concern",
-    emoji: "🦘",
   },
   {
     name: "Koala",
@@ -64,7 +61,6 @@ const MAMMALS = [
     size: "60-85 cm long, 4-15 kg",
     lifespan: "10-12 years in wild, up to 18 years in captivity",
     conservation: "Vulnerable",
-    emoji: "🐨",
   },
   {
     name: "Wombat",
@@ -77,7 +73,6 @@ const MAMMALS = [
     size: "80-120 cm long, 20-35 kg",
     lifespan: "15-20 years in wild, up to 30 years in captivity",
     conservation: "Least Concern to Critically Endangered (varies by species)",
-    emoji: "🐻",
   },
 ];
 
@@ -93,7 +88,6 @@ const REPTILES = [
     size: "30-60 cm long, 300-500g",
     lifespan: "15-20 years in wild, up to 30 years in captivity",
     conservation: "Least Concern",
-    emoji: "𓆈 ",
   },
   {
     name: "Frilled Lizard",
@@ -106,7 +100,6 @@ const REPTILES = [
     size: "70-95 cm long including tail, 500-800g",
     lifespan: "10-20 years in captivity",
     conservation: "Least Concern",
-    emoji: "🦎",
   },
   {
     name: "Saltwater Crocodile",
@@ -119,7 +112,6 @@ const REPTILES = [
     size: "4-7 meters long, 400-1000 kg",
     lifespan: "70-100 years",
     conservation: "Least Concern",
-    emoji: "🐊",
   },
 ];
 

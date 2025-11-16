@@ -1,9 +1,6 @@
 // Global variables to index page
 let activeAnimal;
 
-const emojiRegex =
-  /[\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F780}-\u{1F7FF}\u{1F800}-\u{1F8FF}\u{1F900}-\u{1F9FF}\u{1FA00}-\u{1FA6F}\u{1FA70}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{2300}-\u{23FF}\u{2B00}-\u{2BFF}\u{2D30}-\u{2D6F}\u{2D80}-\u{2DDF}\u{1F9E6}-\u{1F9EF}\u{1FAD0}-\u{1FAD9}\u{1FAB0}-\u{1FAB6}\u{1FACE}-\u{1FAFF}\u{200D}\u{FE0F}]/gu;
-
 const eventData = {
   eventName: "Roaring Good Time: Lion Feeding & Talk",
   eventDate: "Saturday, August 24, 2024",
@@ -104,9 +101,7 @@ function showAnimalDetails() {
 
 function handleAnimalClick(event) {
   const selectedElement = event.currentTarget;
-  const rawText = selectedElement.textContent.trim();
-  const selectedAnimalText = rawText.replace(emojiRegex, "").trim();
-  console.debug(`Selected animal raw text: ${rawText}`);
+  const selectedAnimalText = selectedElement.textContent.trim();
   console.debug(`Selected animal: ${selectedAnimalText}`);
 
   // Remove active class on all elements
@@ -133,10 +128,6 @@ function loadSidebarAnimals() {
 
   ANIMALS.forEach((animal) => {
     const li = document.createElement("li");
-    const emoji = document.createElement("span");
-    emoji.textContent = animal.emoji;
-    li.appendChild(emoji);
-
     const animalName = document.createElement("span");
     animalName.textContent = animal.name;
     li.appendChild(animalName);
