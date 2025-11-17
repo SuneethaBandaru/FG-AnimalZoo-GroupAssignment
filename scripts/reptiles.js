@@ -1,121 +1,82 @@
-// ---- Helpers ----
-function el(tag, cls, html) {
-    const e = document.createElement(tag);
-    if (cls) e.className = cls;
-    if (html !== undefined) e.innerHTML = html;
-    return e;
-}
-
-function renderLayout(sidebarContent, mainContent) {
-    const app = document.getElementById("app");
-    app.innerHTML = "";
-    const container = el("div", "container");
-    const aside = el("aside");
-    aside.appendChild(sidebarContent);
-    const main = el("main");
-    main.appendChild(mainContent);
-    container.appendChild(aside);
-    container.appendChild(main);
-    app.appendChild(container);
-}
-
-function capitalize(s) {
-    return s && s[0].toUpperCase() + s.slice(1);
-}
-
-// ---- Reptiles page logic ----
-let groupActive = null;
-let expandedFull = false;
-
-function renderReptiles() {
-    const animals = ANIMALS.filter((a) => a.group === "reptiles");
-
-    // Sidebar list
-    const ul = el("ul", "item-list");
-    animals.forEach((a) => {
-        const li = el("li", null, a.name);
-        li.dataset.id = a.id;
-        if (groupActive === a.id) li.classList.add("active");
-
-        li.addEventListener("click", () => {
-            if (groupActive === a.id) {
-                groupActive = null;
-                expandedFull = false;
-            } else {
-                groupActive = a.id;
-                expandedFull = false;
-            }
-            renderReptiles();
-        });
-
-        ul.appendChild(li);
-    });
-
-    // Main section
-    const main = el("div");
-
-    // ---- Intro text ----
-    const desc = el("div");
-    desc.innerHTML = `
-    <p>This page features animals in the <strong>Reptiles</strong> group. 
-    Click a reptile in the sidebar to view details.  
-    Use <em>Read More</em> to expand full information.</p>
-  `;
-    main.appendChild(desc);
-
-    // ---- Active reptile card ----
-    if (groupActive) {
-        const a = ANIMALS.find((x) => x.id === groupActive);
-
-        const card = el("div", "card");
-
-        // IMAGE
-        const img = el("img");
-        img.src = a.image; // your image field
-        img.alt = a.name;
-
-        // RIGHT SIDE
-        const right = el("div", "card-info");
-
-        const shortText = a.description.slice(0, 150) + "...";
-        const fullText = expandedFull ? a.description : shortText;
-
-        right.innerHTML = `
-      <h2>${a.name}</h2>
-      <p class="meta">${fullText}</p>
-    `;
-
-        // ---- Full info (inside card) ----
-        if (expandedFull) {
-            const full = el("div", "full-info");
-            full.innerHTML = `
-        <h3>Full Details</h3>
-        <p><strong>Diet:</strong> ${a.food}</p>
-        <p><strong>Lifespan:</strong> ${a.lifespan}</p>
-        <p><strong>Length:</strong> ${a.length}</p>
-        <p><strong>Weight:</strong> ${a.weight}</p>
-        <p><strong>Found in:</strong> ${a.found}</p>
-        <p><strong>ID:</strong> ${a.id}</p>
-      `;
-            right.appendChild(full);
-        }
-
-        // ---- Toggle button ----
-        const toggleBtn = el("button", "btn", expandedFull ? "Read Less" : "Read More");
-        toggleBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            expandedFull = !expandedFull;
-            renderReptiles();
-        });
-
-        right.appendChild(toggleBtn);
-
-        card.appendChild(img);
-        card.appendChild(right);
-        main.appendChild(card);
+const reptiles = [
+    {
+        name: "Frill-necked Lizard",
+        image: "../images/frill-necked-lizard.webp",
+        group: "reptiles",
+        lifespan: "20 years",
+        diet: "Small insects and spiders",
+        description: "When this unique creature feels threatened, it rises on its hind legs, opens its yellow-coloured mouth, unfurls the colorful, pleated skin flap that encircles its head, and hisses. If an attacker is unintimidated by these antics, the lizard simply turns tail, mouth and frill open, and bolts, legs splaying left and right. It continues its deliberate run without stopping or looking back until it reaches the safety of a tree.",
+        length: "90cm",
+        weight: "1 kg",
+        found: "Northern Australia"
+    },
+    {
+        name: "Hawksbill Turtle",
+        image: "../images/hawksbill-turtle.webp",
+        group: "reptiles",
+        lifespan: "50 years ",
+        diet: "other animals (sponges & jellyfish), sea plants",
+        description: "The Hawksbill Sea Turtle gets its common name from the distinctive mouth, which resembles a bird’s beak. The shell, or carapace, is covered in large overlapping scutes, which are a distinctive brown/green/amber background with lighter brown streaks throughout. At the edge of the carapace they overlap in such a way as to form a serrated edge. The turtle has an elongated head and flippers which have two visible claws on the end. The flippers and head are covered in large green, brown or yellow scales. The average adult female weighs 50 kg and their carapace (shell) is approximately 80 cm in length.",
+        length: "80cm (carapace)",
+        weight: "50kg",
+        found: "Tropical coasts of Queensland, Northern Territory and Western Australia."
+    },
+    {
+        name: "Perentie",
+        image: "../images/perentie.jpg",
+        group: "reptiles",
+        diet: "Carnivore, they eat animals like kangaroos, rabbits, lizards and birds",
+        description: "The perentie(Varanus giganteus) is the largest monitor lizard or goanna native to Australia.It is one of the largest living lizards on earth, after the Komodo dragon, Asian water monitor, crocodile monitor, and intersecting by size with Nile monitor.[3] Found west of the Great Dividing Range in the arid areas of Australia, it is rarely seen, because of its shyness and the remoteness of much of its range from human habitation.The species is considered to be a least - concern species according to the International Union for Conservation of Nature.Its status in many Aboriginal cultures is evident in the totemic relationships, and part of the Ngiṉṯaka dreaming, as well as bush tucker.It was a favoured food item among desert Aboriginal tribes, and the fat was used for medicinal and ceremonial purposes.",
+        lifespan: "20 years",
+        length: "2.5 m",
+        weight: "20kg",
+        found: "Deserts"
     }
+];
 
-    renderLayout(ul, main);
+const sidebar = document.getElementById("animal-list");
+const main = document.getElementById("main-content");
+let activeReptile = null;
+
+reptiles.forEach((reptile) => {
+    const li = document.createElement("li");
+    li.textContent = reptile.name;
+    li.addEventListener("click", () => toggleReptile(reptile, li));
+    sidebar.appendChild(li);
+});
+
+function toggleReptile(reptile, element) {
+    if (activeReptile === reptile) {
+        main.innerHTML = `<h2>Australian Reptiles</h2>
+        <p>Discover cold-blooded wonders like the Frill-necked Lizard, Hawksbill Turtle, and Perentie.</p>`;
+        activeReptile = null;
+        element.classList.remove("active");
+    } else {
+        activeReptile = reptile;
+        document.querySelectorAll("#animal-list li").forEach((li) => li.classList.remove("active"));
+        element.classList.add("active");
+        showReptile(reptile);
+    }
 }
 
-renderReptiles();
+function showReptile(reptile) {
+    main.innerHTML = `
+      <h2>${reptile.name}</h2>
+      <img src="../images/${reptile.image}" alt="${reptile.name}" class="animal-img">
+      <p>${reptile.description.substring(0, 200)}...</p>
+      <button id="read-more">Read More</button>
+    `;
+    document.getElementById("read-more").addEventListener("click", () => {
+        main.innerHTML = `
+        <h2>${reptile.name}</h2>
+        <img src="../images/${reptile.image}" alt="${reptile.name}" class="animal-img">
+        <p><strong>Lifespan:</strong> ${reptile.lifespan}</p>
+        <p><strong>Food:</strong> ${reptile.food}</p>
+        <p><strong>Length:</strong> ${reptile.length}</p>
+        <p><strong>weight:</strong> ${reptile.weight}</p>
+        <p><strong>Found:</strong> ${reptile.found}</p>
+        <p>${reptile.description}</p>
+      `;
+    });
+}
+

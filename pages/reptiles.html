@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/reset.css" />
     <link rel="stylesheet" href="../styles/common.css" />
-    <link rel="stylesheet" href="../styles/reptiles.css">
-    <script type="module" src="../scripts/home.js"></script>
+    <link rel="stylesheet" href="../styles/reptiles.css" />
 
     <title>Zoo park</title>
 </head>
@@ -25,70 +25,26 @@
                 <span></span>
             </label>
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
+                <li><a href="../index.html">Home</a></li>
                 <li><a href="../pages/birds.html">Birds</a></li>
                 <li><a href="../pages/mammals.html">Mammals</a></li>
-                <li><a href="../pages/reptiles.html">Reptiles</a></li>
+                <li class="active"><a href="../pages/reptiles.html">Reptiles</a></li>
                 <li><a href="../pages/about.html">About Us</a></li>
-            </ul>
             </ul>
         </nav>
     </header>
-    <main>
-        <div class="group-banner">
-            <div class="banner-text">
-                <h1>Reptiles</h1>
-                <p>Cold-blooded survivors with ancient origins</p>
-            </div>
-        </div>
-        <div id="app"></div>
-        <section class="future-reptiles">
-            <h2>Futuristic Reptiles</h2>
-            <div class="future-reptile-cards">
-                <div class="future-card">
-                    <img src="../images/carpet-python.jpg" alt="Cyber Lizard">
-                    <div class="future-info">
-                        <h4>Carpet Python</h4>
-                        <p>Augmented lizard with metallic scales and night vision.</p>
-                    </div>
-                </div>
+    <main class="container">
+        <aside>
+            <h3>Reptiles</h3>
+            <ul id="animal-list"></ul>
+        </aside>
 
-                <div class="future-card">
-                    <img src="../images/lace-monitor.jpg" alt="Neon Gecko">
-                    <div class="future-info">
-                        <h4>Lace Monitor</h4>
-                        <p>Glowing gecko from futuristic rainforests.</p>
-                    </div>
-                </div>
-
-                <div class="future-card">
-                    <img src="../images/blue-tongue-skink-image.jpg" alt="Robosnake">
-                    <div class="future-info">
-                        <h4>Blue-tongued Skink</h4>
-                        <p>Mechanical snake with advanced sensors.</p>
-                    </div>
-                </div>
-
-                <div class="future-card">
-                    <img src="../images/eastern-water-dragon.jpg" alt="Hover Turtle">
-                    <div class="future-info">
-                        <h4>Eastern Water Dragon</h4>
-                        <p>Levitation turtle with solar-powered shell.</p>
-                    </div>
-                </div>
-
-                <div class="future-card">
-                    <img src="../images/devil-lawler.jpg" alt="Laser Chameleon">
-                    <div class="future-info">
-                        <h4>Thorny Devil</h4>
-                        <p>Chameleon that changes color with laser lights.</p>
-                    </div>
-                </div>
-            </div>
+        <section id="main-content">
+            <h2>Australian Reptiles</h2>
+            <p>Discover cold-blooded wonders like the Frill-necked Lizard, Hawksbill Turtle, and Perentie.</p>
         </section>
     </main>
     <footer class="footer">
-
         <div class="logo">
             <a href="index.html">
                 <img src="../images/logo.png" alt="animals-logo" />
@@ -102,20 +58,16 @@
         </address>
         <div class="socialmedia_icons">
             <a href="https://github.com/jasminedns/australia-zoo" target="_blank">
-                <img src="../images/logos/github.png" alt="github-icon">
+                <img src="../images/logos/github.png" alt="github-icon" />
             </a>
             <a href="https://www.instagram.com/animalsaustralia/" target="_blank">
-                <img src="../images/logos/instagram.png" alt="instagram-icon">
+                <img src="../images/logos/instagram.png" alt="instagram-icon" />
             </a>
             <a href="https://www.nationalgeographic.com/" target="_blank">
-                <img src="../images/logos/national-georaphic.png" alt="national-georaphic-icon">
+                <img src="../images/logos/national-georaphic.png" alt="national-georaphic-icon" />
             </a>
         </div>
-
-
-        </div>
     </footer>
-
     <script src="../scripts/data.js"></script>
     <script src="../scripts/reptiles.js"></script>
 </body>
