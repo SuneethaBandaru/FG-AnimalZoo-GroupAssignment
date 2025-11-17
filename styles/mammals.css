@@ -1,0 +1,60 @@
+.main_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+}
+
+/* Sidebar */
+#sidebar {
+    width: 250px;
+    background: whitesmoke;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+}
+
+/* Mammals Content  */
+.mammal_content {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.mammal_content img {
+    max-width: 100%;      
+    height: auto;
+    margin: 0 auto;
+}
+
+.animal-item {
+    padding: 8px 0;
+    cursor: pointer;
+   
+}
+
+.animal-item:hover {
+    color: #bc0a18;
+}
+
+
+/*  RESPONSIVE */
+
+@media (max-width: 768px) {
+    .main_container {
+        flex-direction: column; 
+    }
+
+    #sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+        text-align: center;
+    }
+
+    .mammal_content {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+}
