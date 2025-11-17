@@ -1,0 +1,386 @@
+/* BANNER */
+.group-banner {
+    width: 100%;
+    height: 350px;
+    background-image: url("../images/herptile-banner.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.group-banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 12px;
+}
+
+.banner-text {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    z-index: 1;
+    padding: 0 20px;
+}
+
+/* LAYOUT */
+.container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 24px auto;
+}
+
+aside {
+    width: 260px;
+    background: #e0f7fa;
+    border-radius: 10px;
+    padding: 14px;
+    min-height: 300px;
+    box-shadow: 0 6px 18px rgba(12, 40, 60, 0.07);
+    flex-shrink: 0;
+    overflow-y: auto;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside li {
+    padding: 0.5rem;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+}
+
+aside li:hover,
+aside li.active {
+    background-color: #e1f5e1;
+}
+
+#main-content {
+    flex: 3;
+    background: #fff;
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 8px;
+}
+
+.animal-img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* SIDEBAR LIST */
+.item-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item-list li {
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease;
+
+}
+
+.item-list li:hover {
+    background-color: #80deea;
+}
+
+.item-list li.active {
+    background-color: #4dd0e1;
+    font-weight: 700;
+}
+
+main {
+    flex: 1;
+    background-color: #f0f4c3;
+    /* light green */
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(12, 40, 60, 0.07);
+    min-height: 300px;
+}
+
+main p {
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 12px;
+}
+
+/* ===========================
+   CARDS
+   =========================== */
+
+.card img {
+    width: 350px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.card img:hover {
+    transform: scale(1.06);
+}
+
+.card {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #fff9c4;
+    /* light yellow */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    flex-wrap: wrap;
+    /* wrap on small screens */
+}
+
+.card-info {
+    flex: 1;
+}
+
+/* Full info inside card */
+.full-info {
+    margin-top: 12px;
+    padding: 12px;
+    background-color: #fff59d;
+    /* darker yellow for contrast */
+    border-radius: 8px;
+}
+
+/* ===========================
+   BUTTON
+   =========================== */
+.btn {
+    margin-top: 12px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    background: #228b22;
+    color: white;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: #1a6d1a;
+}
+
+.future-reptiles {
+    margin-top: 20px;
+}
+
+.future-reptiles h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 18px;
+    color: #1a237e;
+}
+
+/* Cards container */
+.future-reptile-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    /* center cards horizontally */
+}
+
+/* Individual card */
+.future-card {
+    background-color: #e0f7fa;
+    border-radius: 12px;
+    padding: 12px;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.future-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.future-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.future-info h4 {
+    margin: 6px 0 4px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #00796b;
+}
+
+.future-info p {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+    .future-card {
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .future-card img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .future-info h4 {
+        font-size: 0.95rem;
+    }
+
+    .future-info p {
+        font-size: 0.8rem;
+    }
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+
+/* Tablets & smaller desktops */
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    aside {
+        width: 100%;
+        max-height: 220px;
+        overflow-y: auto;
+        margin-bottom: 16px;
+    }
+
+    .card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .card img {
+        width: 90%;
+        height: auto;
+    }
+
+    .card-info {
+        width: 100%;
+        text-align: left;
+    }
+
+    .banner-text {
+        font-size: 1.6rem;
+        padding: 20px;
+    }
+}
+
+/* Tablets / Large phones */
+@media (max-width: 768px) {
+    nav a {
+        margin-left: 8px;
+        font-size: 14px;
+    }
+
+    .group-banner {
+        height: 260px;
+    }
+
+    .banner-text {
+        font-size: 1.4rem;
+    }
+
+    .card img {
+        width: 100%;
+        border-radius: 12px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 576px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    nav {
+        margin-left: 0;
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .group-banner {
+        height: 220px;
+    }
+
+    .banner-text {
+        font-size: 1.2rem;
+    }
+
+    aside {
+        max-height: 180px;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        overflow-y: auto;
+    }
+
+    .item-list {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .item-list li {
+        font-size: 14px;
+        padding: 10px;
+        background: #f0fafc;
+        border-radius: 8px;
+    }
+
+    .item-list li:active {
+        background: #dff6ff;
+        transform: scale(0.98);
+        transition: 0.1s ease;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px;
+    }
+}
