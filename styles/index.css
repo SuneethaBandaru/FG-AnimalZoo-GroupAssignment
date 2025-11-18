@@ -1,3 +1,8 @@
+main {
+  display: flex;
+  flex: 1;
+}
+
 .container {
   color: var(--primary-text-color);
   flex: 1;
