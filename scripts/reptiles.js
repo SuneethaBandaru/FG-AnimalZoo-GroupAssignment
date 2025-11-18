@@ -62,7 +62,9 @@ function toggleReptile(reptile, element) {
 function showReptile(reptile) {
     main.innerHTML = `
       <h2>${reptile.name}</h2>
-      <img src="../images/${reptile.image}" alt="${reptile.name}" class="animal-img">
+      <img src="${reptile.image}" alt="${reptile.name}" class="animal-img">
+
+      
       <p>${reptile.description.substring(0, 200)}...</p>
       <button id="read-more">Read More</button>
     `;
@@ -71,9 +73,9 @@ function showReptile(reptile) {
         <h2>${reptile.name}</h2>
         <img src="../images/${reptile.image}" alt="${reptile.name}" class="animal-img">
         <p><strong>Lifespan:</strong> ${reptile.lifespan}</p>
-        <p><strong>Food:</strong> ${reptile.food}</p>
+        <p><strong>Diet:</strong> ${reptile.diet}</p>
         <p><strong>Length:</strong> ${reptile.length}</p>
-        <p><strong>weight:</strong> ${reptile.weight}</p>
+        <p><strong>Weight:</strong> ${reptile.weight}</p>
         <p><strong>Found:</strong> ${reptile.found}</p>
         <p>${reptile.description}</p>
       `;
