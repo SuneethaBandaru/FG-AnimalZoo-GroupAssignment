@@ -22,9 +22,9 @@ const birds = [
     group: "birds",
     image: "../images/cassowary.jpeg",
     description:
-      "It’s not hard to imagine that cassowaries are descended from dinosaur ancestors. The largest cassowaries can stand as high as six feet and weigh up to 160 pounds.",
+      "It's not hard to imagine that cassowaries are descended from dinosaur ancestors. The largest cassowaries can stand as high as six feet and weigh up to 160 pounds.",
     fullDescription:
-      "It’s not hard to imagine that cassowaries are descended from dinosaur ancestors. The largest cassowaries can stand as high as six feet and weigh up to 160 pounds.   These large birds cannot fly, but their extremely powerful legs propel them at great speeds. They are strong swimmers and can move quickly on both land and water. Cassowaries are shy and they are usually hard to spot, at least in their natural rain forest habitats. They are not overly aggressive, and attacks are rare. But they can do a lot of damage if they are provoked or angered. Cassowary attacks have occasionally been deadly, including a recent one which occurred in 2019, at a private collection of caged birds in Florida.",
+      "It's not hard to imagine that cassowaries are descended from dinosaur ancestors. The largest cassowaries can stand as high as six feet and weigh up to 160 pounds.   These large birds cannot fly, but their extremely powerful legs propel them at great speeds. They are strong swimmers and can move quickly on both land and water. Cassowaries are shy and they are usually hard to spot, at least in their natural rain forest habitats. They are not overly aggressive, and attacks are rare. But they can do a lot of damage if they are provoked or angered. Cassowary attacks have occasionally been deadly, including a recent one which occurred in 2019, at a private collection of caged birds in Florida.",
     diet: "Plants matter like fruit, insects and small animals like mice amd lizards.",
     icon: "🦃",
     sound: "../sounds/cassowary.mp3",
@@ -41,7 +41,7 @@ const birds = [
     description:
       "It has a short crest on the top of its head. Its plumage is mostly brownish black and it has prominent yellow cheek patches and a yellow tail band.",
     fullDescription:
-      "It has a short crest on the top of its head. Its plumage is mostly brownish black and it has prominent yellow cheek patches and a yellow tail band. The body feathers are edged with yellow giving a scalloped appearance. The adult male has a black beak and pinkish-red eye-rings, and the female has a bone-coloured beak and grey eye-rings. In flight, yellow-tailed black cockatoos flap deeply and slowly, with a peculiar heavy fluid motion. Their loud, wailing calls carry for long distances. The whiteae is found south of Victoria to the East of South Australia and is smaller in size. The yellow-tailed black cockatoo is found in temperate forests and forested areas across south and central eastern Queensland to southeastern South Australia, including a very small population persisting in the Eyre Peninsula.[4] Two subspecies are recognised, although Tasmanian and southern mainland populations of the southern subspecies xanthanotus may be distinct enough from each other to bring the total to three. Birds of subspecies funereus (Queensland to eastern Victoria) have longer wings and tails and darker plumage overall, while those of xanthanotus (western Victoria, South Australia and Tasmania) have more prominent scalloping.",
+      "It has a short crest on the top of its head. Its plumage is mostly brownish black and it has prominent yellow cheek patches and a yellow tail band. The body feathers are edged with yellow giving a scalloped appearance. The adult male has a black beak and pinkish-red eye-rings, and the female has a bone-coloured beak and grey eye-rings. In flight, yellow-tailed black cockatoos flap deeply and slowly, with a peculiar heavy fluid motion. Their loud, wailing calls carry for long distances. The white is found south of Victoria to the East of South Australia and is smaller in size. The yellow-tailed black cockatoo is found in temperate forests and forested areas across south and central eastern Queensland to southeastern South Australia, including a very small population persisting in the Eyre Peninsula.",
     diet: "Fruit, seeds and other plant material",
     icon: "🦜",
     sound: "../sounds/cockatoos.mp3",
@@ -100,13 +100,16 @@ window.playBirdSound = (soundUrl) => {
 
 // Toggle read more/less - Make it global
 window.toggleDescription = (button) => {
-  const fullDesc = button.nextElementSibling;
-  if (fullDesc.style.display === "none") {
-    fullDesc.style.display = "block";
-    button.textContent = "Read Less";
+  const card = button.closest(".animal-card");
+  const shortContent = card.querySelector(".short-content");
+  const fullContent = card.querySelector(".full-content");
+
+  if (fullContent.style.display === "none") {
+    fullContent.style.display = "block";
+    shortContent.style.display = "none";
   } else {
-    fullDesc.style.display = "none";
-    button.textContent = "Read More";
+    fullContent.style.display = "none";
+    shortContent.style.display = "block";
   }
 };
 
@@ -120,18 +123,20 @@ const createBirdCard = (bird) => {
                  style="cursor: pointer;"
                  title="Click to hear ${bird.name} sound"
                  onerror="this.style.backgroundColor='#ddd'">
-            <p class="description">${bird.description}</p>
-            <p class="diet"><strong>Diet:</strong> ${bird.diet}</p>
-            ${bird.videoLink ? `<p class="video-link"><strong>Watch Video:</strong> <a href="${bird.videoLink}" target="_blank">View ${bird.name} on YouTube</a></p>` : ""}
-            <button class="read-more-btn" onclick="toggleDescription(this)">Read More</button>
-            <div class="full-description" style="display: none;">
+            <div class="short-content">
+                <p class="description">${bird.description}</p>
+                <p class="diet"><strong>Diet:</strong> ${bird.diet}</p>
+                ${bird.videoLink ? `<p class="video-link"><strong>Watch Video:</strong> <a href="${bird.videoLink}" target="_blank">View ${bird.name} on YouTube</a></p>` : ""}
+                <button class="read-more-btn" onclick="toggleDescription(this)">Read More</button>
+            </div>
+            <div class="full-content" style="display: none;">
                 <p><strong>Lifespan:</strong> ${bird.lifespan}</p>
                 <p><strong>Food:</strong> ${bird.diet}</p>
                 <p><strong>Length:</strong> ${bird.length}</p>
-                <p><strong>weight:</strong> ${bird.weight}</p>
+                <p><strong>Weight:</strong> ${bird.weight}</p>
                 <p><strong>Found:</strong> ${bird.found}</p>
                 <p>${bird.fullDescription}</p>
-                
+                <button class="read-more-btn" onclick="toggleDescription(this)" style="margin-top: 20px;">Back</button>
             </div>
             <p class="group">Belongs to group <a href="birds.html">${bird.group}</a></p>
         </div>
