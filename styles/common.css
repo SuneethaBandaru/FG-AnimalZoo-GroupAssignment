@@ -36,11 +36,6 @@ body {
   position: relative;
 }
 
-main {
-  display: flex;
-  flex: 1;
-}
-
 /* ================== NAVBAR ================== */
 .navbar {
   display: flex;

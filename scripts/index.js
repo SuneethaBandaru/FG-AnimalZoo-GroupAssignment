@@ -2,19 +2,19 @@
 let activeAnimal;
 
 const eventData = {
-  eventName: "Roaring Good Time: Lion Feeding & Talk",
-  eventDate: "Saturday, August 24, 2024",
-  eventTime: "2:00 PM - 3:00 PM",
+  eventName: " Australian Animals Exhibition",
+  eventDate: "Opening Soon",
+  eventTime: "Daily during park hours",
   highlights:
-    "Witness the King of the Jungle in action! Experience the thrill of watching our majestic African lions during their feeding time while our expert zookeepers share fascinating insights about their hunting behaviors, social dynamics, and conservation status. Learn what it takes to care for these magnificent predators and discover how you can help protect lions in the wild. Perfect for families and wildlife enthusiasts!",
-  location: "Lion Habitat, Predator Park Zone",
+    "Journey to the land down under without leaving Sweden! Discover the unique and fascinating wildlife of Australia in our special exhibition featuring at least 9 incredible animals from 3 different groups. From hopping marsupials to scaly reptiles and colorful birds, experience the diversity of Australian fauna. Learn about their remarkable adaptations, habitats, and the conservation challenges they face. Perfect for families and wildlife enthusiasts eager to explore the wonders of Australia!",
+  location: "Special Exhibition Hall, Djurpark",
   description:
-    "Join our expert zookeepers for an exciting live lion feeding demonstration and an insightful talk about the incredible African lions at our zoo. Learn about their behaviors, conservation efforts, and individual personalities. A must-see for big cat enthusiasts!",
+    "Explore our exciting new Australian animals exhibition showcasing the incredible biodiversity of the Australian continent. Meet a variety of species from different animal groups and learn about their unique characteristics, behaviors, and the importance of protecting their natural habitats. An educational adventure for all ages!",
   image: "./images/event.png",
   altText:
-    "A majestic lion looking directly at the camera with a blurred background",
-  ctaText: "Book Your Visit Now!",
-  ctaLink: "#booking",
+    "Australian animals exhibition featuring kangaroos, koalas, and native wildlife",
+  ctaText: "Explore the Exhibition!",
+  ctaLink: "#exhibition",
 };
 
 function showEventDetails() {
@@ -74,8 +74,8 @@ function showAnimalDetails() {
             <div class="selected-animal-details">
                 <h1 class="animal-title">${selectedAnimalInfo.name}</h1>
                 <div class="detail-item">
-                    <strong>Diet:</strong>
-                    <span>${selectedAnimalInfo.diet}</span>
+                    <strong>Food:</strong>
+                    <span>${selectedAnimalInfo.food}</span>
                 </div>
                 <div class="detail-item">
                     <strong>Habitat:</strong>
