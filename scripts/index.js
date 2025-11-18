@@ -2,6 +2,7 @@
 let activeAnimal;
 
 const eventData = {
+<<<<<<< Updated upstream
   eventName: " Australian Animals Exhibition",
   eventDate: "Opening Soon",
   eventTime: "Daily during park hours",
@@ -10,6 +11,14 @@ const eventData = {
   location: "Special Exhibition Hall, Djurpark",
   description:
     "Explore our exciting new Australian animals exhibition showcasing the incredible biodiversity of the Australian continent. Meet a variety of species from different animal groups and learn about their unique characteristics, behaviors, and the importance of protecting their natural habitats. An educational adventure for all ages!",
+=======
+  eventName: "Roaring Good Time: Lion Feeding & Talk",
+  eventDate: "Saturday, August 24, 2024",
+  eventTime: "2:00 PM - 3:00 PM",
+  location: "Lion Habitat, Predator Park Zone",
+  description:
+    "Join our expert zookeepers for an exciting live lion feeding demonstration and an insightful talk about the incredible African lions at our zoo. Learn about their behaviors, conservation efforts, and individual personalities. A must-see for families!",
+>>>>>>> Stashed changes
   image: "./images/event.png",
   altText:
     "Australian animals exhibition featuring kangaroos, koalas, and native wildlife",
@@ -24,27 +33,28 @@ function showEventDetails() {
   card.innerHTML = "";
 
   const eventHTML = `
+        <div class="event-image">
+            <img src="${eventData.image}" alt="${eventData.altText}" />
+        </div>
         <div class="details-section">
             <h1 class="event-title">${eventData.eventName}</h1>
-            <p class="event-highlights">${eventData.highlights}</p>
+            <p class="event-description">
+                  ${eventData.description}
+            </p>
             <div class="event-timings">
               <div class="event-information">
                   <p><strong>Date:</strong> ${eventData.eventDate}</p>
                   <p><strong>Time:</strong> ${eventData.eventTime}</p>
                   <p><strong>Location:</strong> ${eventData.location}</p>
               </div>
-              <p class="event-description">
-                  ${eventData.description}
-              </p>
+              
               <button onclick="window.location.href='${eventData.ctaLink}'" class="event-cta">${eventData.ctaText}</button>
             </div>
         </div>
-        <div class="event-image">
-            <img src="${eventData.image}" alt="${eventData.altText}" />
-        </div>`;
+        `;
 
   card.innerHTML = eventHTML;
-  document.querySelector(".event-card").style.display = "flex";
+  document.querySelector(".event-card").style.display = "block";
 }
 
 function hideEventDetails() {
@@ -69,10 +79,13 @@ function showAnimalDetails() {
   // Clear existing content
   card.innerHTML = "";
 
-  const eventHTML = `
-        <div class="animal-info">
-            <div class="selected-animal-details">
+  const animalDetailsHTML = `
+        <div class="selected-animal-details">
+                <div class="image-section">
+                    <img src="${selectedAnimalInfo.image}" alt="${selectedAnimalInfo.name}" />
+                </div>
                 <h1 class="animal-title">${selectedAnimalInfo.name}</h1>
+<<<<<<< Updated upstream
                 <div class="detail-item">
                     <strong>Food:</strong>
                     <span>${selectedAnimalInfo.food}</span>
@@ -86,16 +99,16 @@ function showAnimalDetails() {
                     <p class="animal-description">${selectedAnimalInfo.description}</p>
                 </div>
                 <div class="detail-item">
+=======
+                <p class="animal-description">${selectedAnimalInfo.description}</p>
+                <div class="group-info">
+>>>>>>> Stashed changes
                     <strong>Group:</strong>
-                    <span><a href="${selectedAnimalInfo.ctaLink}" class="event-cta">${selectedAnimalInfo.group}</a></span>
-                </div>
-            </div>
-            <div class="image-section">
-                <img src="${selectedAnimalInfo.image}" alt="${selectedAnimalInfo.name}" />
-            </div>
+                    <span><a href="./pages/${selectedAnimalInfo.group}.html" class="event-cta">${selectedAnimalInfo.group}</a></span>
+                </div> 
         </div>`;
 
-  card.innerHTML = eventHTML;
+  card.innerHTML = animalDetailsHTML;
   document.querySelector(".animal-card").style.display = "block";
 }
 

@@ -2,7 +2,11 @@ const BIRDS = [
   {
     name: "Kookaburra",
     group: "birds",
+<<<<<<< Updated upstream
     image: "./images/logs/kookaburra.jpg",
+=======
+    image: "../images/kookaburra.png",
+>>>>>>> Stashed changes
     description:
       " Native to the eucalyptus forests of eastern Australia, the laughing kookaburra is the largest member of the Kingfisher family, with females weighing up to one pound and growing to 43 cm in length. Its beak can reach 10 cm long and is used to snatch a variety of invertebrates and small vertebrates, including the occasional small snake. Since being introduced in western Australia and New Zealand, the kookaburra has angered farmers by preying on their fowl. The laughing kookaburra has dark brown wing plumage and a white head and underside. ",
     food: "Insects, small reptiles, mice, and snakes",

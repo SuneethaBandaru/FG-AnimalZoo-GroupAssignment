@@ -6,17 +6,12 @@ main {
 .container {
   color: var(--primary-text-color);
   flex: 1;
-  margin: 20px;
+  margin: 15px;
 }
 
 .event-card {
   display: flex;
   gap: 10px;
-}
-
-.event-highlights {
-  font-style: italic;
-  margin-top: 5px;
 }
 
 .details-section,
@@ -32,21 +27,6 @@ main {
   font-size: 1.1em;
 }
 
-.event-image {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.animal-info {
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  padding: 15px;
-  gap: 10px;
-}
-
 .selected-animal-details {
   display: flex;
   flex: 1;
@@ -56,26 +36,24 @@ main {
   border-radius: 8px;
 }
 
-.animal-title {
+.animal-title,
+.event-title {
   color: var(--primary-text-color-2);
+  text-align: center;
 }
 
-.detail-item {
-  display: grid;
-  grid-template-columns: 150px auto;
+.image-section,
+.event-image {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto; /*Center align child content*/
 }
 
-.detail-item strong {
-  color: var(--primary-text-color-2);
-  font-size: 1.1em;
-}
-
-.image-section {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.image-section img,
+.event-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .animal-description {
@@ -170,7 +148,6 @@ main {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   }
 
-  .animal-info,
   .event-card {
     flex-direction: column-reverse;
   }
@@ -179,10 +156,5 @@ main {
     grid-template-columns: 1fr;
     gap: 15px;
     padding: 15px;
-  }
-
-  .detail-item {
-    grid-template-columns: 1fr;
-    gap: 10px;
   }
 }
