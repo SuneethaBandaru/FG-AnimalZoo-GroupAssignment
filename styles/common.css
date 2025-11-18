@@ -63,6 +63,7 @@ body {
   display: flex;
   list-style: none;
   gap: 1rem;
+  z-index: 2000;
 }
 
 .nav-links li.active {
@@ -97,6 +98,8 @@ body {
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
+  z-index: 999;
+  position: relative;
 }
 
 .hamburger span {
