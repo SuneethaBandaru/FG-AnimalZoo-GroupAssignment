@@ -34,11 +34,14 @@ body {
   position: relative;
 }
 
+<<<<<<< HEAD
 /*main {
   display: flex;
   flex: 1;
 }*/
 
+=======
+>>>>>>> feature/home-image
 /* ================== NAVBAR ================== */
 .navbar {
   display: flex;
