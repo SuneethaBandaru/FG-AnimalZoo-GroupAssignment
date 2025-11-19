@@ -97,6 +97,9 @@ aside li.active {
     border-radius: 8px;
 }
 
+#main-content h2 {
+    color: green;
+}
 
 
 .reptiles-details {
