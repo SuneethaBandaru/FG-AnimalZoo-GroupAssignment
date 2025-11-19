@@ -13,7 +13,7 @@ const birds = [
     sound: "../sounds/kookaburra.mp3",
     videoLink: "https://www.youtube.com/watch?v=S0ZbykXlg6Q",
     lifespan: "20 years",
-    length: "43cm",
+    length: "43 cm",
     weight: "300 grams",
     found: "Australia wide",
   },
@@ -30,7 +30,7 @@ const birds = [
     sound: "../sounds/cassowary.mp3",
     videoLink: "https://www.youtube.com/watch?v=mb1bbIyF9OU&t=52s",
     lifespan: "20 years",
-    length: "1.7m",
+    length: "1.7 m",
     weight: "44 Kg",
     found: "Queensland",
   },
@@ -47,7 +47,7 @@ const birds = [
     sound: "../sounds/cockatoos.mp3",
     videoLink: "https://www.youtube.com/watch?v=CEQuDyuQFKE",
     lifespan: "41 years",
-    length: "65cm",
+    length: "65 cm",
     weight: "900 grams",
     found: "SE Australia",
   },
@@ -124,21 +124,21 @@ const createBirdCard = (bird) => {
                  title="Click to hear ${bird.name} sound"
                  onerror="this.style.backgroundColor='#ddd'">
             <div class="short-content">
+                <h2>${bird.name}</h2><br>
                 <p class="description">${bird.description}</p>
-                <p class="diet"><strong>Diet:</strong> ${bird.diet}</p>
                 ${bird.videoLink ? `<p class="video-link"><strong>Watch Video:</strong> <a href="${bird.videoLink}" target="_blank">View ${bird.name} on YouTube</a></p>` : ""}
                 <button class="read-more-btn" onclick="toggleDescription(this)">Read More</button>
             </div>
             <div class="full-content" style="display: none;">
                 <p><strong>Lifespan:</strong> ${bird.lifespan}</p>
-                <p><strong>Food:</strong> ${bird.diet}</p>
                 <p><strong>Length:</strong> ${bird.length}</p>
                 <p><strong>Weight:</strong> ${bird.weight}</p>
                 <p><strong>Found:</strong> ${bird.found}</p>
+                <p><strong>Diet:</strong> ${bird.diet}</p>
                 <p>${bird.fullDescription}</p>
                 <button class="read-more-btn" onclick="toggleDescription(this)" style="margin-top: 20px;">Back</button>
             </div>
-            <p class="group">Belongs to group <a href="birds.html">${bird.group}</a></p>
+            <p class="group">Belongs to group <a href="birds.html"><strong>${bird.group}</strong></a></p>
         </div>
     `;
 };
@@ -175,7 +175,7 @@ const defaultContent = `
     
     <p style="font-size: 16px; line-height: 1.8; margin-bottom: 15px;">
         Many Australian birds play crucial roles in their ecosystems as pollinators, seed dispersers, and 
-        pest controllers. The honeyeaters, for instance, are vital pollinators of native plants, while 
+        pest controllers. The honey eaters, for instance, are vital pollinators of native plants, while 
         kookaburras help control snake and rodent populations.
     </p>
     
