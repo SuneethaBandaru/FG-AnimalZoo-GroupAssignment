@@ -2,27 +2,16 @@
 let activeAnimal;
 
 const eventData = {
-<<<<<<< Updated upstream
-  eventName: " Australian Animals Exhibition",
-  eventDate: "Opening Soon",
-  eventTime: "Daily during park hours",
-  highlights:
-    "Journey to the land down under without leaving Sweden! Discover the unique and fascinating wildlife of Australia in our special exhibition featuring at least 9 incredible animals from 3 different groups. From hopping marsupials to scaly reptiles and colorful birds, experience the diversity of Australian fauna. Learn about their remarkable adaptations, habitats, and the conservation challenges they face. Perfect for families and wildlife enthusiasts eager to explore the wonders of Australia!",
-  location: "Special Exhibition Hall, Djurpark",
-  description:
-    "Explore our exciting new Australian animals exhibition showcasing the incredible biodiversity of the Australian continent. Meet a variety of species from different animal groups and learn about their unique characteristics, behaviors, and the importance of protecting their natural habitats. An educational adventure for all ages!",
-=======
-  eventName: "Roaring Good Time: Lion Feeding & Talk",
+  eventName: "Australian Wildlife Exhibition",
   eventDate: "Saturday, August 24, 2024",
-  eventTime: "2:00 PM - 3:00 PM",
-  location: "Lion Habitat, Predator Park Zone",
+  eventTime: "10:00 AM - 5:00 PM",
+  location: "Australia Zone, Local Djurpark",
   description:
-    "Join our expert zookeepers for an exciting live lion feeding demonstration and an insightful talk about the incredible African lions at our zoo. Learn about their behaviors, conservation efforts, and individual personalities. A must-see for families!",
->>>>>>> Stashed changes
+    "Discover the wonders of Australia's unique wildlife in this immersive exhibition! Featuring at least nine extraordinary animals from three major groups—mammals, birds, and reptiles—this event offers an up-close look at some of the world’s most fascinating species. Learn fun facts about iconic animals like kangaroos, koalas, and emus, and dive deeper into the lives of lesser-known creatures such as blue-tongued skinks and kookaburras. Through interactive displays, educational talks, and guided habitat tours, visitors of all ages can explore the rich biodiversity of Australia while learning about real-world conservation efforts. A perfect adventure for families, school groups, and animal lovers!",
   image: "./images/event.png",
   altText:
-    "Australian animals exhibition featuring kangaroos, koalas, and native wildlife",
-  ctaText: "Explore the Exhibition!",
+    "A collage of Australian animals including a kangaroo, koala, and emu",
+  ctaText: "Visit the Exhibition!",
   ctaLink: "#exhibition",
 };
 
@@ -85,24 +74,8 @@ function showAnimalDetails() {
                     <img src="${selectedAnimalInfo.image}" alt="${selectedAnimalInfo.name}" />
                 </div>
                 <h1 class="animal-title">${selectedAnimalInfo.name}</h1>
-<<<<<<< Updated upstream
-                <div class="detail-item">
-                    <strong>Food:</strong>
-                    <span>${selectedAnimalInfo.food}</span>
-                </div>
-                <div class="detail-item">
-                    <strong>Habitat:</strong>
-                    <span>${selectedAnimalInfo.habitat}</span>
-                </div>
-                <div class="detail-item">
-                    <strong>Description:</strong>
-                    <p class="animal-description">${selectedAnimalInfo.description}</p>
-                </div>
-                <div class="detail-item">
-=======
                 <p class="animal-description">${selectedAnimalInfo.description}</p>
                 <div class="group-info">
->>>>>>> Stashed changes
                     <strong>Group:</strong>
                     <span><a href="./pages/${selectedAnimalInfo.group}.html" class="event-cta">${selectedAnimalInfo.group}</a></span>
                 </div> 
