@@ -2,19 +2,17 @@
 let activeAnimal;
 
 const eventData = {
-  eventName: "Roaring Good Time: Lion Feeding & Talk",
+  eventName: "Australian Wildlife Exhibition",
   eventDate: "Saturday, August 24, 2024",
-  eventTime: "2:00 PM - 3:00 PM",
-  highlights:
-    "Witness the King of the Jungle in action! Experience the thrill of watching our majestic African lions during their feeding time while our expert zookeepers share fascinating insights about their hunting behaviors, social dynamics, and conservation status. Learn what it takes to care for these magnificent predators and discover how you can help protect lions in the wild. Perfect for families and wildlife enthusiasts!",
-  location: "Lion Habitat, Predator Park Zone",
+  eventTime: "10:00 AM - 5:00 PM",
+  location: "Australia Zone, Local Djurpark",
   description:
-    "Join our expert zookeepers for an exciting live lion feeding demonstration and an insightful talk about the incredible African lions at our zoo. Learn about their behaviors, conservation efforts, and individual personalities. A must-see for big cat enthusiasts!",
+    "Discover the wonders of Australia's unique wildlife in this immersive exhibition! Featuring at least nine extraordinary animals from three major groups—mammals, birds, and reptiles—this event offers an up-close look at some of the world’s most fascinating species. Learn fun facts about iconic animals like kangaroos, koalas, and emus, and dive deeper into the lives of lesser-known creatures such as blue-tongued skinks and kookaburras. Through interactive displays, educational talks, and guided habitat tours, visitors of all ages can explore the rich biodiversity of Australia while learning about real-world conservation efforts. A perfect adventure for families, school groups, and animal lovers!",
   image: "./images/event.png",
   altText:
-    "A majestic lion looking directly at the camera with a blurred background",
-  ctaText: "Book Your Visit Now!",
-  ctaLink: "#booking",
+    "A collage of Australian animals including a kangaroo, koala, and emu",
+  ctaText: "Visit the Exhibition!",
+  ctaLink: "#exhibition",
 };
 
 function showEventDetails() {
@@ -24,27 +22,28 @@ function showEventDetails() {
   card.innerHTML = "";
 
   const eventHTML = `
+        <div class="event-image">
+            <img src="${eventData.image}" alt="${eventData.altText}" />
+        </div>
         <div class="details-section">
             <h1 class="event-title">${eventData.eventName}</h1>
-            <p class="event-highlights">${eventData.highlights}</p>
+            <p class="event-description">
+                  ${eventData.description}
+            </p>
             <div class="event-timings">
               <div class="event-information">
                   <p><strong>Date:</strong> ${eventData.eventDate}</p>
                   <p><strong>Time:</strong> ${eventData.eventTime}</p>
                   <p><strong>Location:</strong> ${eventData.location}</p>
               </div>
-              <p class="event-description">
-                  ${eventData.description}
-              </p>
+              
               <button onclick="window.location.href='${eventData.ctaLink}'" class="event-cta">${eventData.ctaText}</button>
             </div>
         </div>
-        <div class="event-image">
-            <img src="${eventData.image}" alt="${eventData.altText}" />
-        </div>`;
+        `;
 
   card.innerHTML = eventHTML;
-  document.querySelector(".event-card").style.display = "flex";
+  document.querySelector(".event-card").style.display = "block";
 }
 
 function hideEventDetails() {
@@ -69,33 +68,20 @@ function showAnimalDetails() {
   // Clear existing content
   card.innerHTML = "";
 
-  const eventHTML = `
-        <div class="animal-info">
-            <div class="selected-animal-details">
+  const animalDetailsHTML = `
+        <div class="selected-animal-details">
+                <div class="image-section">
+                    <img src="${selectedAnimalInfo.image}" alt="${selectedAnimalInfo.name}" />
+                </div>
                 <h1 class="animal-title">${selectedAnimalInfo.name}</h1>
-                <div class="detail-item">
-                    <strong>Diet:</strong>
-                    <span>${selectedAnimalInfo.diet}</span>
-                </div>
-                <div class="detail-item">
-                    <strong>Habitat:</strong>
-                    <span>${selectedAnimalInfo.habitat}</span>
-                </div>
-                <div class="detail-item">
-                    <strong>Description:</strong>
-                    <p class="animal-description">${selectedAnimalInfo.description}</p>
-                </div>
-                <div class="detail-item">
+                <p class="animal-description">${selectedAnimalInfo.description}</p>
+                <div class="group-info">
                     <strong>Group:</strong>
-                    <span><a href="${selectedAnimalInfo.ctaLink}" class="event-cta">${selectedAnimalInfo.group}</a></span>
-                </div>
-            </div>
-            <div class="image-section">
-                <img src="${selectedAnimalInfo.image}" alt="${selectedAnimalInfo.name}" />
-            </div>
+                    <span><a href="./pages/${selectedAnimalInfo.group}.html" class="event-cta">${selectedAnimalInfo.group}</a></span>
+                </div> 
         </div>`;
 
-  card.innerHTML = eventHTML;
+  card.innerHTML = animalDetailsHTML;
   document.querySelector(".animal-card").style.display = "block";
 }
 
