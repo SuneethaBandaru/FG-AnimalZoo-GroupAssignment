@@ -116,21 +116,42 @@ footer {
   color: var(--primary-text-color-2);
   padding: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
 }
 
+.footer .logo {
+  align-items: flex-start;
+}
 .footer .logo img {
-  width: 110px;
-  height: 110px;
+  width: 90px;
+  height: 90px;
+  border-radius: 20px;
+  
+}
+.social_media {
+  display: flex;
+  align-items: center;
+  padding: 10px;
 }
 
-.socialmedia_icons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 10px;
+.social_media li {
+  list-style-type: none;
+  display: block;
+  color: #ffff;
+  line-height: 30px;
+  text-decoration: none;
+}
+
+.social_media a {
+  color: whitesmoke;
+  text-decoration: none;
+  margin: 0px 15px;
+}
+
+i.fa-brands {
+  padding: 10px;
 }
 
 .address a {
