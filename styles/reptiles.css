@@ -1,16 +1,26 @@
+header {
+    position: relative;
+    /* ensures z-index works */
+    z-index: 1000;
+    /* higher than banner */
+}
+
 /* BANNER */
 .group-banner {
     width: 100%;
     height: 350px;
-    background-image: url("../images/herptile-banner.png");
+    background-image: url("../images/astralian-reptiles-banner.webp");
     background-size: cover;
     background-position: center;
     border-radius: 12px;
     margin-bottom: 18px;
     position: relative;
     display: flex;
+    flex: 0 0 100%;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    z-index: 1;
 }
 
 .group-banner::after {
@@ -35,23 +45,34 @@
 }
 
 /* LAYOUT */
-.container {
+.page-layout {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+/* FLEX row for sidebar + content */
+.content-row {
     display: flex;
     gap: 20px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: 24px auto;
+    margin-top: 20px;
+}
+
+.container {
+    color: var(--primary-text-color);
+    flex: 1;
+    margin: 20px;
 }
 
 aside {
     width: 260px;
-    background: #e0f7fa;
     border-radius: 10px;
     padding: 14px;
     min-height: 300px;
     box-shadow: 0 6px 18px rgba(12, 40, 60, 0.07);
     flex-shrink: 0;
     overflow-y: auto;
+    min-height: 450px;
 }
 
 aside ul {
@@ -60,18 +81,18 @@ aside ul {
 }
 
 aside li {
-    padding: 0.5rem;
+    padding: 1rem;
     cursor: pointer;
     border-bottom: 1px solid #ccc;
 }
 
 aside li:hover,
 aside li.active {
-    background-color: #e1f5e1;
+    background-color: #2e8b57;
 }
 
 #main-content {
-    flex: 3;
+    flex: 1;
     background: #fff;
     padding: 1rem;
     margin: 0.5rem;
@@ -83,6 +104,36 @@ aside li.active {
     max-width: 400px;
     border-radius: 8px;
     margin-bottom: 1rem;
+}
+
+.animal-details {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.animal-img {
+    width: 395px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.animal-info {
+    flex: 1;
+    color: #333;
+}
+
+.animal-info h2 {
+    margin-bottom: 10px;
+}
+
+.animal-info p {
+    margin: 8px 0;
 }
 
 /* SIDEBAR LIST */
@@ -109,15 +160,14 @@ aside li.active {
     font-weight: 700;
 }
 
-main {
+/* main {
     flex: 1;
     background-color: #f0f4c3;
-    /* light green */
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 6px 18px rgba(12, 40, 60, 0.07);
     min-height: 300px;
-}
+}*/
 
 main p {
     line-height: 1.6;
@@ -187,6 +237,7 @@ main p {
 
 .future-reptiles {
     margin-top: 20px;
+    margin-bottom: 50px;
 }
 
 .future-reptiles h2 {
@@ -242,106 +293,97 @@ main p {
 }
 
 
-/* Responsive */
-@media (max-width: 600px) {
-    .future-card {
-        gap: 8px;
-        padding: 8px;
-    }
-
-    .future-card img {
-        width: 50px;
-        height: 50px;
-    }
-
-    .future-info h4 {
-        font-size: 0.95rem;
-    }
-
-    .future-info p {
-        font-size: 0.8rem;
-    }
-}
-
 /* ===========================
    RESPONSIVE DESIGN
    =========================== */
 
-/* Tablets & smaller desktops */
+/* Large Tablets / Small Laptops */
 @media (max-width: 992px) {
-    .container {
+
+    .content-row {
         flex-direction: column;
-        gap: 16px;
     }
 
     aside {
         width: 100%;
-        max-height: 220px;
+        max-height: 250px;
         overflow-y: auto;
-        margin-bottom: 16px;
+        margin-bottom: 20px;
     }
 
-    .card {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+    #main-content {
+        margin: 0;
     }
 
-    .card img {
-        width: 90%;
-        height: auto;
-    }
-
-    .card-info {
-        width: 100%;
-        text-align: left;
+    .group-banner {
+        height: 280px;
     }
 
     .banner-text {
         font-size: 1.6rem;
-        padding: 20px;
-    }
-}
-
-/* Tablets / Large phones */
-@media (max-width: 768px) {
-    nav a {
-        margin-left: 8px;
-        font-size: 14px;
     }
 
-    .group-banner {
-        height: 260px;
-    }
-
-    .banner-text {
-        font-size: 1.4rem;
+    .card {
+        flex-direction: column;
+        text-align: center;
     }
 
     .card img {
         width: 100%;
-        border-radius: 12px;
+        height: auto;
     }
 }
 
-/* Small phones */
-@media (max-width: 576px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
-
-    nav {
-        margin-left: 0;
-        display: flex;
-        gap: 6px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+/* Tablets / Large Phones */
+@media (max-width: 768px) {
 
     .group-banner {
-        height: 220px;
+        height: 240px;
+    }
+
+    .banner-text {
+        font-size: 1.4rem;
+        padding: 10px;
+    }
+
+    aside {
+        max-height: 200px;
+    }
+
+    .content-row {
+        gap: 12px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .animal-details {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .animal-img {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto 15px;
+    }
+
+    .animal-info {
+        text-align: left;
+    }
+}
+
+
+/* Small Phones */
+@media (max-width: 576px) {
+
+    .group-banner {
+        height: 200px;
     }
 
     .banner-text {
@@ -349,34 +391,23 @@ main p {
     }
 
     aside {
-        max-height: 180px;
+        width: 100%;
+        max-height: 160px;
         padding: 10px;
-        border-radius: 10px;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        overflow-y: auto;
-    }
-
-    .item-list {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
     }
 
     .item-list li {
         font-size: 14px;
         padding: 10px;
-        background: #f0fafc;
-        border-radius: 8px;
-    }
-
-    .item-list li:active {
-        background: #dff6ff;
-        transform: scale(0.98);
-        transition: 0.1s ease;
     }
 
     .card {
-        padding: 16px;
+        padding: 14px;
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
     }
 
     .btn {

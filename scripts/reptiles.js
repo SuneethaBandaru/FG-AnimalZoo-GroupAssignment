@@ -59,7 +59,7 @@ function toggleReptile(reptile, element) {
     }
 }
 
-function showReptile(reptile) {
+/*function showReptile(reptile) {
     main.innerHTML = `
       <h2>${reptile.name}</h2>
       <img src="../images/${reptile.image}" alt="${reptile.name}" class="animal-img">
@@ -78,5 +78,50 @@ function showReptile(reptile) {
         <p>${reptile.description}</p>
       `;
     });
-}
+}*/
+function showReptile(reptile) {
+    const shortDescription = reptile.description.substring(0, 200) + "...";
 
+    main.innerHTML = `
+      <div class="animal-details">
+          <img src="${reptile.image}" alt="${reptile.name}" class="animal-img">
+
+          <div class="animal-info">
+              <h2>${reptile.name}</h2>
+
+              <p id="description-text">${shortDescription}</p>
+
+              <div id="extra-info" style="display: none;">
+                  <p><strong>Lifespan:</strong> ${reptile.lifespan}</p>
+                  <p><strong>Diet:</strong> ${reptile.diet}</p>
+                  <p><strong>Length:</strong> ${reptile.length}</p>
+                  <p><strong>Weight:</strong> ${reptile.weight}</p>
+                  <p><strong>Found:</strong> ${reptile.found}</p>
+                  <p>${reptile.description}</p>
+              </div>
+
+              <button id="toggle-btn" class="btn">Read More</button>
+          </div>
+      </div>
+    `;
+
+    const toggleBtn = document.getElementById("toggle-btn");
+    const extraInfo = document.getElementById("extra-info");
+    const descText = document.getElementById("description-text");
+
+    let expanded = false;
+
+    toggleBtn.addEventListener("click", () => {
+        expanded = !expanded;
+
+        if (expanded) {
+            extraInfo.style.display = "block";
+            descText.style.display = "none";
+            toggleBtn.textContent = "Read Less";
+        } else {
+            extraInfo.style.display = "none";
+            descText.style.display = "block";
+            toggleBtn.textContent = "Read More";
+        }
+    });
+}
