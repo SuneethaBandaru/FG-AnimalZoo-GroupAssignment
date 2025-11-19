@@ -42,7 +42,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1rem;
-  background-color: var(--bg-color);
+  background-color: var(--bg-color-1);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   position: sticky;
   top: 0;
@@ -112,7 +112,7 @@ footer {
   color: var(--primary-text-color-2);
   padding: 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -121,9 +121,8 @@ footer {
   align-items: flex-start;
 }
 .footer .logo img {
-  width: 90px;
-  height: 90px;
-  border-radius: 20px;
+  width: 110px;
+  height: 110px;
 }
 .social_media {
   display: flex;
