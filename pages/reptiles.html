@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../styles/reset.css" />
     <link rel="stylesheet" href="../styles/common.css" />
     <link rel="stylesheet" href="../styles/reptiles.css" />
+    <script src="https://kit.fontawesome.com/20b9975a2f.js" crossorigin="anonymous"></script>
 
     <title>Zoo park</title>
 </head>
@@ -43,7 +44,7 @@
         <div class="content-row">
             <aside class="sidebar">
                 <h3>Reptiles</h3>
-                <ul id="animal-list"></ul>
+                <ul id="reptiles-list"></ul>
             </aside>
             <section id="main-content">
                 <h2>Australian Reptiles</h2>
@@ -64,48 +65,86 @@
         </div>
         <section class="future-reptiles">
             <h2>Futuristic Reptiles</h2>
-            <div class="future-reptile-cards">
-                <div class="future-card">
-                    <img src="../images/carpet-python.jpg" alt="Cyber Lizard">
-                    <div class="future-info">
-                        <h4>Carpet Python</h4>
-                        <p>Augmented lizard with metallic scales and night vision.</p>
-                    </div>
-                </div>
 
-                <div class="future-card">
-                    <img src="../images/lace-monitor.jpg" alt="Neon Gecko">
-                    <div class="future-info">
-                        <h4>Lace Monitor</h4>
-                        <p>Glowing gecko from futuristic rainforests.</p>
+            <div class="future-reptile-scroll">
+                <div class="future-reptile-track">
+                    <!-- ORIGINAL CARDS -->
+                    <div class="future-card">
+                        <img src="../images/carpet-python.jpg" alt="Carpet Python">
+                        <div class="future-info">
+                            <h4>Carpet Python</h4>
+                            <p>Augmented lizard with metallic scales and night vision.</p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="future-card">
-                    <img src="../images/blue-tongue-skink-image.jpg" alt="Robosnake">
-                    <div class="future-info">
-                        <h4>Blue-tongued Skink</h4>
-                        <p>Mechanical snake with advanced sensors.</p>
+                    <div class="future-card">
+                        <img src="../images/lace-monitor.jpg" alt="Lace Monitor">
+                        <div class="future-info">
+                            <h4>Lace Monitor</h4>
+                            <p>Glowing gecko from futuristic rainforests.</p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="future-card">
-                    <img src="../images/eastern-water-dragon.jpg" alt="Hover Turtle">
-                    <div class="future-info">
-                        <h4>Eastern Water Dragon</h4>
-                        <p>Levitation turtle with solar-powered shell.</p>
+                    <div class="future-card">
+                        <img src="../images/blue-tongue-skink-image.jpg" alt="Blue-tongued Skink">
+                        <div class="future-info">
+                            <h4>Blue-tongued Skink</h4>
+                            <p>Mechanical snake with advanced sensors.</p>
+                        </div>
                     </div>
-                </div>
+                    <div class="future-card">
+                        <img src="../images/eastern-water-dragon.jpg" alt="Eastern Water Dragon">
+                        <div class="future-info">
+                            <h4>Eastern Water Dragon</h4>
+                            <p>Levitation turtle with solar-powered shell.</p>
+                        </div>
+                    </div>
+                    <div class="future-card">
+                        <img src="../images/devil-lawler.jpg" alt="Thorny Devil">
+                        <div class="future-info">
+                            <h4>Thorny Devil</h4>
+                            <p>Chameleon that changes color with laser lights.</p>
+                        </div>
+                    </div>
 
-                <div class="future-card">
-                    <img src="../images/devil-lawler.jpg" alt="Laser Chameleon">
-                    <div class="future-info">
-                        <h4>Thorny Devil</h4>
-                        <p>Chameleon that changes color with laser lights.</p>
+                    <!-- DUPLICATE CARDS -->
+                    <div class="future-card">
+                        <img src="../images/carpet-python.jpg" alt="Carpet Python">
+                        <div class="future-info">
+                            <h4>Carpet Python</h4>
+                            <p>Augmented lizard with metallic scales and night vision.</p>
+                        </div>
+                    </div>
+                    <div class="future-card">
+                        <img src="../images/lace-monitor.jpg" alt="Lace Monitor">
+                        <div class="future-info">
+                            <h4>Lace Monitor</h4>
+                            <p>Glowing gecko from futuristic rainforests.</p>
+                        </div>
+                    </div>
+                    <div class="future-card">
+                        <img src="../images/blue-tongue-skink-image.jpg" alt="Blue-tongued Skink">
+                        <div class="future-info">
+                            <h4>Blue-tongued Skink</h4>
+                            <p>Mechanical snake with advanced sensors.</p>
+                        </div>
+                    </div>
+                    <div class="future-card">
+                        <img src="../images/eastern-water-dragon.jpg" alt="Eastern Water Dragon">
+                        <div class="future-info">
+                            <h4>Eastern Water Dragon</h4>
+                            <p>Levitation turtle with solar-powered shell.</p>
+                        </div>
+                    </div>
+                    <div class="future-card">
+                        <img src="../images/devil-lawler.jpg" alt="Thorny Devil">
+                        <div class="future-info">
+                            <h4>Thorny Devil</h4>
+                            <p>Chameleon that changes color with laser lights.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+
 
     </main>
 
@@ -115,22 +154,28 @@
                 <img src="../images/logo.png" alt="animals-logo" />
             </a>
         </div>
-        <address class="address">
-            Address: <br />
-            123 Web Street, Suite 404<br />Australia<br />
-            <a href="tel:+15551234567">(555) 123-4567</a><br />
-            <a href="mailto:info@example.com">info@example.com</a>
-        </address>
-        <div class="socialmedia_icons">
-            <a href="https://github.com/jasminedns/australia-zoo" target="_blank">
-                <img src="../images/logos/github.png" alt="github-icon" />
-            </a>
-            <a href="https://www.instagram.com/animalsaustralia/" target="_blank">
-                <img src="../images/logos/instagram.png" alt="instagram-icon" />
-            </a>
-            <a href="https://www.nationalgeographic.com/" target="_blank">
-                <img src="../images/logos/national-georaphic.png" alt="national-georaphic-icon" />
-            </a>
+        <div class="footer-info">
+            <strong>Address:</strong><br>
+            123 Web Street, Suite 404<br>
+            Australia<br>
+            (555) 123-4567<br>
+            info@example.com
+        </div>
+        <div class="social_media">
+            <ul>
+                <li>
+                    <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i>Facebook</a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i>Instagram</a>
+                </li>
+                <li>
+                    <a href="https://x.com/"><i class="fa-brands fa-twitter"></i>Twitter</a>
+                </li>
+                <li>
+                    <a href="https://github.com/"><i class="fa-brands fa-github"></i>GitHub</a>
+                </li>
+            </ul>
         </div>
     </footer>
     <script src="../scripts/data.js"></script>

@@ -34,7 +34,7 @@ const reptiles = [
     }
 ];
 
-const sidebar = document.getElementById("animal-list");
+const sidebar = document.getElementById("reptiles-list");
 const main = document.getElementById("main-content");
 let activeReptile = null;
 
@@ -47,46 +47,24 @@ reptiles.forEach((reptile) => {
 
 function toggleReptile(reptile, element) {
     if (activeReptile === reptile) {
-        main.innerHTML = `<h2>Australian Reptiles</h2>
-        <p>Discover cold-blooded wonders like the Frill-necked Lizard, Hawksbill Turtle, and Perentie.</p>`;
         activeReptile = null;
         element.classList.remove("active");
     } else {
         activeReptile = reptile;
-        document.querySelectorAll("#animal-list li").forEach((li) => li.classList.remove("active"));
+        document.querySelectorAll("#reptiles-list li").forEach((li) => li.classList.remove("active"));
         element.classList.add("active");
         showReptile(reptile);
     }
 }
 
-/*function showReptile(reptile) {
-    main.innerHTML = `
-      <h2>${reptile.name}</h2>
-      <img src="../images/${reptile.image}" alt="${reptile.name}" class="animal-img">
-      <p>${reptile.description.substring(0, 200)}...</p>
-      <button id="read-more">Read More</button>
-    `;
-    document.getElementById("read-more").addEventListener("click", () => {
-        main.innerHTML = `
-        <h2>${reptile.name}</h2>
-        <img src="../images/${reptile.image}" alt="${reptile.name}" class="animal-img">
-        <p><strong>Lifespan:</strong> ${reptile.lifespan}</p>
-        <p><strong>Food:</strong> ${reptile.food}</p>
-        <p><strong>Length:</strong> ${reptile.length}</p>
-        <p><strong>weight:</strong> ${reptile.weight}</p>
-        <p><strong>Found:</strong> ${reptile.found}</p>
-        <p>${reptile.description}</p>
-      `;
-    });
-}*/
 function showReptile(reptile) {
     const shortDescription = reptile.description.substring(0, 200) + "...";
 
     main.innerHTML = `
-      <div class="animal-details">
-          <img src="${reptile.image}" alt="${reptile.name}" class="animal-img">
+      <div class="reptiles-details">
+          <img src="${reptile.image}" alt="${reptile.name}" class="reptiles-img">
 
-          <div class="animal-info">
+          <div class="reptiles-info">
               <h2>${reptile.name}</h2>
 
               <p id="description-text">${shortDescription}</p>

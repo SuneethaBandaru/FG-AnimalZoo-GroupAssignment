@@ -1,8 +1,6 @@
 header {
     position: relative;
-    /* ensures z-index works */
     z-index: 1000;
-    /* higher than banner */
 }
 
 /* BANNER */
@@ -72,7 +70,7 @@ aside {
     box-shadow: 0 6px 18px rgba(12, 40, 60, 0.07);
     flex-shrink: 0;
     overflow-y: auto;
-    min-height: 450px;
+    min-height: 615px;
 }
 
 aside ul {
@@ -99,75 +97,42 @@ aside li.active {
     border-radius: 8px;
 }
 
-.animal-img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 8px;
-    margin-bottom: 1rem;
+#main-content h2 {
+    color: green;
 }
 
-.animal-details {
+
+.reptiles-details {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     align-items: flex-start;
     background: #fff;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: solid green;
 }
 
-.animal-img {
+.reptiles-img {
     width: 395px;
     height: auto;
     border-radius: 12px;
     object-fit: cover;
 }
 
-.animal-info {
+.reptiles-info {
     flex: 1;
     color: #333;
 }
 
-.animal-info h2 {
+.reptiles-info h2 {
     margin-bottom: 10px;
 }
 
-.animal-info p {
+.reptiles-info p {
     margin: 8px 0;
 }
-
-/* SIDEBAR LIST */
-.item-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.item-list li {
-    padding: 10px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.2s ease;
-
-}
-
-.item-list li:hover {
-    background-color: #80deea;
-}
-
-.item-list li.active {
-    background-color: #4dd0e1;
-    font-weight: 700;
-}
-
-/* main {
-    flex: 1;
-    background-color: #f0f4c3;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 6px 18px rgba(12, 40, 60, 0.07);
-    min-height: 300px;
-}*/
 
 main p {
     line-height: 1.6;
@@ -175,9 +140,7 @@ main p {
     margin-bottom: 12px;
 }
 
-/* ===========================
-   CARDS
-   =========================== */
+/* CARDS */
 
 .card img {
     width: 350px;
@@ -196,11 +159,10 @@ main p {
     gap: 20px;
     padding: 20px;
     border-radius: 12px;
-    background-color: #fff9c4;
-    /* light yellow */
+    background-color: #fff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     flex-wrap: wrap;
-    /* wrap on small screens */
+
 }
 
 .card-info {
@@ -216,9 +178,7 @@ main p {
     border-radius: 8px;
 }
 
-/* ===========================
-   BUTTON
-   =========================== */
+/* BUTTON  */
 .btn {
     margin-top: 12px;
     padding: 8px 14px;
@@ -235,36 +195,46 @@ main p {
     background: #1a6d1a;
 }
 
-.future-reptiles {
-    margin-top: 20px;
+section.future-reptiles {
+    margin-top: 30px;
     margin-bottom: 50px;
-}
-
-.future-reptiles h2 {
     text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 18px;
-    color: #1a237e;
 }
 
-/* Cards container */
-.future-reptile-cards {
+.future-reptile-scroll {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.future-reptile-track {
     display: flex;
-    flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
-    /* center cards horizontally */
+    width: max-content;
+
+    /* infinite scroll animation */
+    animation: scroll-left 30s linear infinite;
 }
 
-/* Individual card */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Card styling */
 .future-card {
-    background-color: #e0f7fa;
+    flex: 0 0 220px;
+    background-color: #fff;
     border-radius: 12px;
     padding: 12px;
-    width: 220px;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.1s ease;
 }
 
 .future-card:hover {
@@ -293,9 +263,9 @@ main p {
 }
 
 
-/* ===========================
-   RESPONSIVE DESIGN
-   =========================== */
+
+
+/* RESPONSIVE DESIGN */
 
 /* Large Tablets / Small Laptops */
 @media (max-width: 992px) {
@@ -396,9 +366,9 @@ main p {
         padding: 10px;
     }
 
-    .item-list li {
-        font-size: 14px;
-        padding: 10px;
+    .reptiles-details {
+        display: flex;
+        flex-wrap: wrap;
     }
 
     .card {
