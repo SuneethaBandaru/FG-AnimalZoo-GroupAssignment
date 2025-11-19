@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/common.css" />
+    <link rel="stylesheet" href="../styles/reptiles.css" />
+
+    <title>Zoo park</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img width="80" height="80" src="../images/logo.png" alt="Animals logo" />
+            </div>
+            <!-- Hamburger menu -->
+            <input type="checkbox" name="menu-toggle" id="menu-toggle" class="menu-toggle" />
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/birds.html">Birds</a></li>
+                <li><a href="../pages/mammals.html">Mammals</a></li>
+                <li class="active"><a href="../pages/reptiles.html">Reptiles</a></li>
+                <li><a href="../pages/about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+
+        <section class="group-banner">
+            <div class="banner-text">Australian Reptiles</div>
+        </section>
+
+        <!-- NEW WRAPPER for side-by-side layout -->
+        <div class="content-row">
+            <aside class="sidebar">
+                <h3>Reptiles</h3>
+                <ul id="animal-list"></ul>
+            </aside>
+            <section id="main-content">
+                <h2>Australian Reptiles</h2>
+                <p>Discover cold-blooded wonders like the Frill-necked Lizard, Hawksbill Turtle, and Perentie.</p>
+                <p>
+                    Australia is home to a diverse range of reptiles, from tiny skinks to massive monitor lizards.
+                    Reptiles here are adapted to extreme climates, including deserts, tropical coasts, and woodlands.
+                    They play a crucial role in ecosystems, controlling insect populations, dispersing seeds, and
+                    serving as prey for larger animals.
+                </p>
+                <p>
+                    Some iconic Australian reptiles include the Frill-necked Lizard, which uses its dramatic frill to
+                    scare predators,
+                    the Hawksbill Turtle found along tropical coasts, and the Perentie, one of the largest monitor
+                    lizards in the world.
+                </p>
+            </section>
+        </div>
+        <section class="future-reptiles">
+            <h2>Futuristic Reptiles</h2>
+            <div class="future-reptile-cards">
+                <div class="future-card">
+                    <img src="../images/carpet-python.jpg" alt="Cyber Lizard">
+                    <div class="future-info">
+                        <h4>Carpet Python</h4>
+                        <p>Augmented lizard with metallic scales and night vision.</p>
+                    </div>
+                </div>
+
+                <div class="future-card">
+                    <img src="../images/lace-monitor.jpg" alt="Neon Gecko">
+                    <div class="future-info">
+                        <h4>Lace Monitor</h4>
+                        <p>Glowing gecko from futuristic rainforests.</p>
+                    </div>
+                </div>
+
+                <div class="future-card">
+                    <img src="../images/blue-tongue-skink-image.jpg" alt="Robosnake">
+                    <div class="future-info">
+                        <h4>Blue-tongued Skink</h4>
+                        <p>Mechanical snake with advanced sensors.</p>
+                    </div>
+                </div>
+
+                <div class="future-card">
+                    <img src="../images/eastern-water-dragon.jpg" alt="Hover Turtle">
+                    <div class="future-info">
+                        <h4>Eastern Water Dragon</h4>
+                        <p>Levitation turtle with solar-powered shell.</p>
+                    </div>
+                </div>
+
+                <div class="future-card">
+                    <img src="../images/devil-lawler.jpg" alt="Laser Chameleon">
+                    <div class="future-info">
+                        <h4>Thorny Devil</h4>
+                        <p>Chameleon that changes color with laser lights.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="logo">
+            <a href="index.html">
+                <img src="../images/logo.png" alt="animals-logo" />
+            </a>
+        </div>
+        <address class="address">
+            Address: <br />
+            123 Web Street, Suite 404<br />Australia<br />
+            <a href="tel:+15551234567">(555) 123-4567</a><br />
+            <a href="mailto:info@example.com">info@example.com</a>
+        </address>
+        <div class="socialmedia_icons">
+            <a href="https://github.com/jasminedns/australia-zoo" target="_blank">
+                <img src="../images/logos/github.png" alt="github-icon" />
+            </a>
+            <a href="https://www.instagram.com/animalsaustralia/" target="_blank">
+                <img src="../images/logos/instagram.png" alt="instagram-icon" />
+            </a>
+            <a href="https://www.nationalgeographic.com/" target="_blank">
+                <img src="../images/logos/national-georaphic.png" alt="national-georaphic-icon" />
+            </a>
+        </div>
+    </footer>
+    <script src="../scripts/data.js"></script>
+    <script src="../scripts/reptiles.js"></script>
+</body>
+
+</html>
