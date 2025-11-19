@@ -70,7 +70,7 @@ aside {
     box-shadow: 0 6px 18px rgba(12, 40, 60, 0.07);
     flex-shrink: 0;
     overflow-y: auto;
-    min-height: 450px;
+    min-height: 615px;
 }
 
 aside ul {
@@ -110,6 +110,7 @@ aside li.active {
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: solid green;
 }
 
 .reptiles-img {
