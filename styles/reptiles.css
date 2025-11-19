@@ -104,6 +104,7 @@ aside li.active {
 
 .reptiles-details {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     align-items: flex-start;
     background: #fff;
@@ -365,9 +366,9 @@ section.future-reptiles {
         padding: 10px;
     }
 
-    .item-list li {
-        font-size: 14px;
-        padding: 10px;
+    .reptiles-details {
+        display: flex;
+        flex-wrap: wrap;
     }
 
     .card {
