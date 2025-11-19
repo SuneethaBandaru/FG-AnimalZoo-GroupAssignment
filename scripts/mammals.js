@@ -15,7 +15,7 @@ const animals = [
             they have fleshy noses that can be either on the long side or rather short. They don't really look like true anteaters (Myrmecophaga tridactyla),
              either, and they are not closely related to them. 
             They are spiny, though; their bodies are covered with hollow, barbless quills. Echidnas are monotremes, egg-laying mammals. The only other living monotreme is the platypus.`,
-        
+
         length: "76cm",
         weight: "10kg",
         found: "Throughout Australia",
@@ -78,7 +78,6 @@ welcomeText.classList.add("welcome-message");
 mainContainer.appendChild(welcomeText);
 
 
-
 function createListInsideDiv() {
     // Get the side div
     const sidebarContainer = document.getElementById("sidebar");
@@ -102,6 +101,7 @@ function createListInsideDiv() {
             // Image
             //create an image inside the div
             //assign the image
+            
             const img = document.createElement("img");
             img.src = animal.image;
             img.alt = animal.name;
@@ -112,13 +112,31 @@ function createListInsideDiv() {
             nameElement.textContent = animal.name.toUpperCase();
             nameElement.classList.add("animal-name");
             mainContainer.appendChild(nameElement);
-            
+
             // Short summary
-            const shortDesc = document.createElement("div");
-            shortDesc.textContent = animal.shortDescription;
-            shortDesc.classList.add("animal-short-desc");
+            const shortDesc = document.createElement("div"); 
+            shortDesc.classList.add("animal-short-desc"); 
+
+            const lifespan = document.createElement("p");
+            lifespan.textContent = "Lifespan : " + animal.lifespan;
+            shortDesc.appendChild(lifespan);
+
+            const weight = document.createElement("p");
+            weight.textContent = "Weight : " + animal.weight;
+            shortDesc.appendChild(weight);
+
+            const length = document.createElement("p");
+            length.textContent = "Length : " + animal.length;
+            shortDesc.appendChild(length);
+            const food = document.createElement("p");
+            food.textContent = "Food : " + animal.food;
+            shortDesc.appendChild(food);
+
+            const shortDescription = document.createElement("p");
+            shortDescription.textContent = animal.shortDescription;
+            shortDesc.appendChild(shortDescription);
             mainContainer.appendChild(shortDesc);
-            
+
             // Read More link
             const readMore = document.createElement("a");
             readMore.textContent = "Read More";
@@ -128,8 +146,11 @@ function createListInsideDiv() {
 
             // Full description div with smooth collapse/expand
             const fullDesc = document.createElement("div");
-            fullDesc.textContent = animal.fullDescription;
+
+            const fullDescription = document.createElement("p");
+            fullDescription.textContent = animal.fullDescription;
             fullDesc.classList.add("animal-full-desc");
+            fullDesc.appendChild(fullDescription);
             mainContainer.appendChild(fullDesc);
 
             // Read Less link
