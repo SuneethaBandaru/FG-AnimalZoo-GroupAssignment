@@ -1,4 +1,3 @@
-// Birds data
 const birds = [
   {
     name: "Kookaburra",
@@ -70,35 +69,25 @@ const birds = [
   },
 ];
 
-// Get DOM elements
 const sidebar = document.getElementById("sidebar");
 const main = document.getElementById("main");
-
-// Store current audio
 let currentAudio = null;
 
-// Play bird sound - Make it global
 window.playBirdSound = (soundUrl) => {
-  // Stop the previous audio if it's playing
   if (currentAudio) {
     currentAudio.pause();
     currentAudio.currentTime = 0;
   }
-
-  // Create and play new audio
   currentAudio = new Audio(soundUrl);
   currentAudio.play().catch((err) => {
     console.log("Audio playback failed:", err);
     alert("Unable to play sound. Please check your audio settings.");
   });
-
-  // Clear currentAudio when sound finishes
   currentAudio.onended = () => {
     currentAudio = null;
   };
 };
 
-// Toggle read more/less - Make it global
 window.toggleDescription = (button) => {
   const card = button.closest(".animal-card");
   const shortContent = card.querySelector(".short-content");
@@ -113,7 +102,6 @@ window.toggleDescription = (button) => {
   }
 };
 
-// Function to create bird card
 const createBirdCard = (bird) => {
   return `
         <div class="animal-card">
@@ -126,6 +114,7 @@ const createBirdCard = (bird) => {
             <div class="short-content">
                 <h2>${bird.name}</h2><br>
                 <p class="description">${bird.description}</p>
+                <p><strong>Diet:</strong> ${bird.diet}</p><br>
                 ${bird.videoLink ? `<p class="video-link"><strong>Watch Video:</strong> <a href="${bird.videoLink}" target="_blank">View ${bird.name} on YouTube</a></p>` : ""}
                 <button class="read-more-btn" onclick="toggleDescription(this)">Read More</button>
             </div>
@@ -134,7 +123,6 @@ const createBirdCard = (bird) => {
                 <p><strong>Length:</strong> ${bird.length}</p>
                 <p><strong>Weight:</strong> ${bird.weight}</p>
                 <p><strong>Found:</strong> ${bird.found}</p>
-                <p><strong>Diet:</strong> ${bird.diet}</p>
                 <p>${bird.fullDescription}</p>
                 <button class="read-more-btn" onclick="toggleDescription(this)" style="margin-top: 20px;">Back</button>
             </div>
@@ -143,19 +131,16 @@ const createBirdCard = (bird) => {
     `;
 };
 
-// Toggle active state
 const toggleActive = (clickedElement, allElements) => {
   allElements.forEach((el) => el.classList.remove("active"));
   clickedElement.classList.add("active");
 };
 
-// Show bird details
 const showBird = (bird, listItem) => {
   main.innerHTML = createBirdCard(bird);
   toggleActive(listItem, document.querySelectorAll("#sidebar li"));
 };
 
-// Default group content with background video
 const defaultContent = `
     <div style="position: relative; overflow: hidden; border-radius: 8px; margin-bottom: 30px;">
         <video autoplay loop muted plays inline style="width: 100%; height: 450px; object-fit: cover; border-radius: 8px; display: block;">
@@ -185,7 +170,6 @@ const defaultContent = `
     </p>
 `;
 
-// Build sidebar
 sidebar.innerHTML =
   '<h2><a href="birds.html" style="color: white; text-decoration: none;">Birds</a></h2>';
 const list = document.createElement("ul");
@@ -198,6 +182,4 @@ birds.forEach((bird) => {
   list.appendChild(li);
 });
 sidebar.appendChild(list);
-
-// Initial load
 main.innerHTML = defaultContent;

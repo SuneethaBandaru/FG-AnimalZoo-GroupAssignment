@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-/* Variables for colors */
 :root {
   --primary-text-color: wheat;
   --primary-text-color-2: #ffffff;
@@ -39,9 +38,9 @@ body {
 main {
   display: flex;
   flex: 1;
+  overflow: hidden;
 }
 
-/* ================== NAVBAR ================== */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -52,6 +51,7 @@ main {
   position: sticky;
   top: 0;
   color: var(--primary-text-color-2);
+  z-index: 100;
 }
 
 .logo img {
@@ -59,12 +59,11 @@ main {
   height: 80px;
 }
 
-/* ================== NAV LINKS ================== */
 .nav-links {
-  align-items: center;
   display: flex;
   list-style: none;
   gap: 1rem;
+  align-items: center;
 }
 
 .nav-links li.active {
@@ -91,7 +90,6 @@ main {
   background-color: var(--nav-item-hover);
 }
 
-/* ================== HAMBURGER MENU ================== */
 .menu-toggle {
   display: none;
 }
@@ -111,61 +109,52 @@ main {
   border-radius: 2px;
 }
 
-/* ================== Footer ================== */
 footer {
-  background-color: var(--bg-color-1);
-  color: var(--primary-text-color-2);
-  padding: 20px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: var(--bg-color);
+  color: var(--primary-text-color-2);
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.2);
   flex-wrap: wrap;
 }
 
-.footer .logo {
-  align-items: flex-start;
+footer .logo img {
+  width: 120px;
+  height: 120px;
 }
-.footer .logo img {
-  width: 90px;
-  height: 90px;
-  border-radius: 20px;
-  
-}
-.social_media {
+
+footer nav,
+footer .social_media,
+footer .address {
   display: flex;
   align-items: center;
-  padding: 10px;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.social_media li {
-  list-style-type: none;
-  display: block;
-  color: #ffff;
-  line-height: 30px;
-  text-decoration: none;
-}
-
-.social_media a {
-  color: whitesmoke;
-  text-decoration: none;
-  margin: 0px 15px;
-}
-
-i.fa-brands {
-  padding: 10px;
-}
-
-.address a {
-  text-decoration: none;
+footer a {
   color: var(--primary-text-color-2);
+  text-decoration: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
-/* ================== Sidebar =====================*/
+footer a:hover {
+  background-color: var(--nav-item-hover);
+}
+
 aside {
   height: fit-content;
   max-height: calc(100vh - 100px);
   width: 240px;
   background-color: var(--bg-color);
+  overflow-y: auto;
+  position: sticky;
+  top: 100px;
+  padding-bottom: 1rem;
 }
 
 aside h1 {
@@ -184,14 +173,16 @@ aside h1 {
   gap: 5px;
   height: 60px;
   padding: 10px;
+  flex-shrink: 0;
 }
 
 .list-item:hover {
   background-color: var(--bg-color-1);
-  transition: width 0.3s linear, background-color 0.3s linear;
+  transition:
+    width 0.3s linear,
+    background-color 0.3s linear;
 }
 
-/* ================== RESPONSIVE ================== */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -220,8 +211,34 @@ aside h1 {
     display: block;
   }
 
-  /* Show menu when checked */
   .menu-toggle:checked ~ .nav-links {
     display: flex;
+  }
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  footer .logo img {
+    margin-bottom: 0.5rem;
+  }
+
+  footer nav,
+  footer .social_media,
+  footer .address {
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  aside {
+    width: 100%;
+    max-height: none;
+  }
+
+  main {
+    flex-direction: column;
   }
 }
