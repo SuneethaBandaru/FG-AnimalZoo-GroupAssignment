@@ -13,6 +13,7 @@
 .animal-card,
 .event-card {
   display: flex;
+  flex-direction: column;
   gap: 10px;
   justify-content: center;
   width: 80%;
@@ -33,6 +34,7 @@
 
 .event-container {
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 15px;
 }
@@ -255,10 +257,6 @@ footer {
     object-fit: contain;
     border-radius: 8px;
     margin-bottom: 15px;
-  }
-
-  .event-card {
-    flex-direction: column;
   }
 
   .selected-animal-details {
