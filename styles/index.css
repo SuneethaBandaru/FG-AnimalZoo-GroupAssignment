@@ -15,6 +15,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  align-items: center;
   justify-content: center;
   width: 80%;
 }
@@ -72,7 +73,7 @@
 }
 
 .video-overlay::before {
-  content: ''; /* Required for ::before pseudo-element */
+  content: ""; /* Required for ::before pseudo-element */
   position: absolute;
   top: 0;
   left: 0;
