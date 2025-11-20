@@ -52,6 +52,7 @@ body {
 .logo img {
   width: 80px;
   height: 80px;
+  border-radius: 20px;
 }
 
 /* ================== NAV LINKS ================== */
@@ -117,12 +118,13 @@ footer {
   flex-wrap: wrap;
 }
 
-.footer .logo {
+ .logo {
   align-items: flex-start;
 }
 .footer .logo img {
   width: 110px;
   height: 110px;
+  border-radius: 20px;
 }
 .social_media {
   display: flex;
