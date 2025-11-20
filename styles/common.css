@@ -10,12 +10,14 @@
   --primary-text-color-2: #ffffff;
   --bg-color: #316146;
   --bg-color-1: #2e8b57;
-  --bg-color-2: #3aac6b;
+  --bg-color-2: #8da899;
   --bg-color-3: #149180;
-  --bg-color-4: #1a6b5e;
+  --bg-color-4: #adc1be;
   --bg-color-5: #1a6b5e;
+  --bg-color-6: #ffc107;
   --nav-item-hover: #4caf50;
   --sidebar-border: #596c59;
+  --sidebar-bg-color: #134a42;
 }
 
 body {
@@ -25,11 +27,11 @@ body {
   min-height: 100vh;
   background: linear-gradient(
     135deg,
-    var(--bg-color-1) 0%,
-    var(--bg-color-2) 25%,
+    var(--bg-color-4) 0%,
+    var(--bg-color-3) 25%,
     var(--bg-color-2) 50%,
     var(--bg-color-3) 75%,
-    var(--bg-color-4) 100%
+    var(--bg-color-1) 100%
   );
   background-repeat: no-repeat;
   background-position: center;
@@ -157,10 +159,9 @@ i.fa-brands {
 
 /* ================== Sidebar =====================*/
 aside {
-  height: fit-content;
-  max-height: calc(100vh - 100px);
-  width: 240px;
   background-color: var(--bg-color);
+  height: 600px;
+  width: 240px;
 }
 
 aside h1 {
@@ -168,6 +169,12 @@ aside h1 {
   color: var(--primary-text-color);
   font-family: monospace;
   text-align: center;
+  background: linear-gradient(
+    135deg,
+    var(--bg-color-1) 0%,
+    var(--bg-color-3) 50%,
+    var(--bg-color-5) 100%
+  );
 }
 
 .list-item {
@@ -183,9 +190,7 @@ aside h1 {
 
 .list-item:hover {
   background-color: var(--bg-color-1);
-  transition:
-    width 0.3s linear,
-    background-color 0.3s linear;
+  transition: width 0.3s linear, background-color 0.3s linear;
 }
 
 /* ================== RESPONSIVE ================== */

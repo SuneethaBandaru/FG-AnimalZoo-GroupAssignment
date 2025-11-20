@@ -6,25 +6,54 @@ main {
 .container {
   color: var(--primary-text-color);
   flex: 1;
-  margin: 15px;
+}
+
+.video-container {
+  width: 100%;
+  position: relative;
+  height: 600px;
+  background-color: var(--bg-color-1);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.video-container video {
+  /* 4. Make the video fill the padded space */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  height: 50%;
+  left: 0;
+  padding: 15px;
+  position: absolute;
+  top: 70%;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  z-index: 2;
+}
+
+.video-overlay::before {
+  content: ""; /* Required for ::before pseudo-element */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px); /* For Safari compatibility */
+  z-index: -1;
 }
 
 .event-card {
   display: flex;
   gap: 10px;
-}
-
-.details-section,
-.event-timings {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  gap: 10px;
-}
-
-.event-information {
-  color: antiquewhite;
-  font-size: 1.1em;
 }
 
 .selected-animal-details {
@@ -42,15 +71,13 @@ main {
   text-align: center;
 }
 
-.image-section,
-.event-image {
-  width: 200px;
+.image-section {
+  width: 400px;
   height: 200px;
   margin: 0 auto; /*Center align child content*/
 }
 
-.image-section img,
-.event-image img {
+.image-section img {
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -68,11 +95,14 @@ main {
   background: linear-gradient(
     135deg,
     var(--bg-color-1) 0%,
+    var(--bg-color-2) 25%,
     var(--bg-color-3) 50%,
+    var(--bg-color-6) 75%,
     var(--bg-color-5) 100%
   );
   border: none;
   border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   color: var(--primary-text-color-2);
   cursor: pointer;
   font-size: 16px;
@@ -80,7 +110,7 @@ main {
   padding: 12px 24px;
   text-transform: uppercase;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  width: 100%;
 }
 
 .event-cta:hover {
@@ -93,6 +123,44 @@ main {
 .event-cta:active {
   transform: translateY(0);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  z-index: 3;
+}
+
+/* ================== SCROLLING ANIMALS ================== */
+.scrolling-animals {
+  width: 100%;
+  overflow: hidden;
+  background: white;
+  padding: 20px 0;
+  position: relative;
+}
+
+.scrolling-animals-track {
+  display: flex;
+  animation: scroll 30s linear infinite;
+  gap: 30px;
+}
+
+.scrolling-animals-track img {
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  flex-shrink: 0;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* ================== RESPONSIVE ================== */
@@ -108,6 +176,7 @@ main {
 
   aside {
     background-color: transparent;
+    height: auto;
     width: 100%;
   }
 
@@ -132,7 +201,7 @@ main {
   }
 
   #animals-list li.active {
-    background-color: #149180;
+    background-color: var(--bg-color-3);
   }
 
   .event-image-background {
@@ -156,5 +225,34 @@ main {
     grid-template-columns: 1fr;
     gap: 15px;
     padding: 15px;
+  }
+
+  .list-item {
+    padding: 5px;
+    height: 30px;
+  }
+
+  .video-container {
+    padding-bottom: 0;
+    height: auto;
+  }
+
+  .video-container video {
+    position: static;
+    height: auto;
+  }
+
+  .video-overlay {
+    height: auto;
+    padding: 15px 10px;
+    position: static;
+    top: auto;
+  }
+  .video-overlay::before {
+    background-color: #333;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    position: static;
+    z-index: auto;
   }
 }

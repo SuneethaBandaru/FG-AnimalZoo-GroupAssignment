@@ -3,17 +3,20 @@ let activeAnimal;
 
 const eventData = {
   eventName: "Australian Wildlife Exhibition",
-  eventDate: "Saturday, August 24, 2024",
+  eventDate: "Monday, november 25, 2025",
   eventTime: "10:00 AM - 5:00 PM",
   location: "Australia Zone, Local Djurpark",
   description:
-    "Discover the wonders of Australia's unique wildlife in this immersive exhibition! Featuring at least nine extraordinary animals from three major groups—mammals, birds, and reptiles—this event offers an up-close look at some of the world’s most fascinating species. Learn fun facts about iconic animals like kangaroos, koalas, and emus, and dive deeper into the lives of lesser-known creatures such as blue-tongued skinks and kookaburras. Through interactive displays, educational talks, and guided habitat tours, visitors of all ages can explore the rich biodiversity of Australia while learning about real-world conservation efforts. A perfect adventure for families, school groups, and animal lovers!",
-  image: "./images/event.png",
+    "Discover the wonders of Australia's unique wildlife in this immersive exhibition! Featuring at least nine extraordinary animals from three major groups—mammals, birds, and reptiles—this event offers an up-close look at some of the world's most fascinating species. A perfect adventure for families, school groups, and animal lovers!",
+
   altText:
     "A collage of Australian animals including a kangaroo, koala, and emu",
-  ctaText: "Visit the Exhibition!",
-  ctaLink: "#exhibition",
 };
+
+/*function sendEnquiryMail() {
+  const mailAddress = "support@example.com";
+  return `mailto:support@example.com?subject=Inquiry%20About%20Your%20Services&body=Dear%20Team%2C%0A%0AI%20am%20writing%20to%20inquire%20about...%0A%0ASincerely%2C`;
+}*/
 
 function showEventDetails() {
   const card = document.querySelector(".event-card");
@@ -22,22 +25,21 @@ function showEventDetails() {
   card.innerHTML = "";
 
   const eventHTML = `
-        <div class="event-image">
-            <img src="${eventData.image}" alt="${eventData.altText}" />
-        </div>
-        <div class="details-section">
+      
+        <div class="video-container">
+          <video autoplay loop muted plays inline>
+            <source
+              src="./videos/Zoo_Animals_and_Visitor_Video.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+          <div class="video-overlay">
             <h1 class="event-title">${eventData.eventName}</h1>
             <p class="event-description">
-                  ${eventData.description}
+                ${eventData.description}
             </p>
-            <div class="event-timings">
-              <div class="event-information">
-                  <p><strong>Date:</strong> ${eventData.eventDate}</p>
-                  <p><strong>Time:</strong> ${eventData.eventTime}</p>
-                  <p><strong>Location:</strong> ${eventData.location}</p>
-              </div>
-              
-              <button onclick="window.location.href='${eventData.ctaLink}'" class="event-cta">${eventData.ctaText}</button>
+           
             </div>
         </div>
         `;
