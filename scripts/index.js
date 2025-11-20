@@ -2,31 +2,29 @@
 let activeAnimal;
 
 const eventData = {
-  eventName: "Australian Wildlife Exhibition",
-  eventDate: "Monday, november 25, 2025",
-  eventTime: "10:00 AM - 5:00 PM",
-  location: "Australia Zone, Local Djurpark",
+  eventName: 'Australian Wildlife Exhibition',
+  eventDate: 'Monday, november 25, 2025',
+  eventTime: '10:00 AM - 5:00 PM',
+  welcomeMessage:
+    'You are welcome to visit us and explore the wonders of Australian wildlife!',
+  image: './images/event-image.jpeg',
+  location: 'Australia Zone, Local Djurpark',
   description:
     "Discover the wonders of Australia's unique wildlife in this immersive exhibition! Featuring at least nine extraordinary animals from three major groups—mammals, birds, and reptiles—this event offers an up-close look at some of the world's most fascinating species. A perfect adventure for families, school groups, and animal lovers!",
-
+  highlights:
+    '🦘 Meet iconic Australian species | 🎓 Educational talks & demonstrations | 📸 Photo opportunities with friendly animals | 🎟️ Interactive exhibits for all ages | 🌿 Conservation awareness programs',
   altText:
-    "A collage of Australian animals including a kangaroo, koala, and emu",
+    'A collage of Australian animals including a kangaroo, koala, and emu',
 };
 
-/*function sendEnquiryMail() {
-  const mailAddress = "support@example.com";
-  return `mailto:support@example.com?subject=Inquiry%20About%20Your%20Services&body=Dear%20Team%2C%0A%0AI%20am%20writing%20to%20inquire%20about...%0A%0ASincerely%2C`;
-}*/
-
-function showEventDetails() {
-  const card = document.querySelector(".event-card");
+function renderIntroVideo() {
+  const videoContainer = document.querySelector('.intro-video-container');
 
   // Clear existing content
-  card.innerHTML = "";
+  videoContainer.innerHTML = null;
 
-  const eventHTML = `
-      
-        <div class="video-container">
+  const videoHTML = `
+      <div class="video-container">
           <video autoplay loop muted plays inline>
             <source
               src="./videos/Zoo_Animals_and_Visitor_Video.mp4"
@@ -35,29 +33,47 @@ function showEventDetails() {
             Your browser does not support the video tag.
           </video>
           <div class="video-overlay">
-            <h1 class="event-title">${eventData.eventName}</h1>
-            <p class="event-description">
-                ${eventData.description}
+            <h1 class="video-title">${eventData.eventName}</h1>
+            <p class="highlights">
+                ${eventData.highlights}
             </p>
-           
+
             </div>
+        </div>`;
+  videoContainer.innerHTML = videoHTML;
+}
+
+function showEventDetails() {
+  const card = document.querySelector('.event-card');
+
+  // Clear existing content
+  card.innerHTML = '';
+
+  const eventHTML = `
+        <div class="event-image-container">
+          <img src="${eventData.image}" alt="${eventData.altText}" class="event-image" />
         </div>
-        `;
+        <div class="event-container">
+            <p class="event-title">${eventData.welcomeMessage}</p>
+            <p class="event-datetime"><strong>Date:</strong> ${eventData.eventDate} | <strong>Time:</strong> ${eventData.eventTime}</p>
+            <p class="event-location"><strong>Location:</strong> ${eventData.location}</p>
+            <p class="event-description">${eventData.description}</p>
+        </div>`;
 
   card.innerHTML = eventHTML;
-  document.querySelector(".event-card").style.display = "block";
+  document.querySelector('.event-card').style.display = 'flex';
 }
 
 function hideEventDetails() {
-  document.querySelector(".event-card").style.display = "none";
+  document.querySelector('.event-card').style.display = 'none';
 }
 
 function hideAnimalDetails() {
-  document.querySelector(".animal-card").style.display = "none";
+  document.querySelector('.animal-card').style.display = 'none';
 }
 
 function showAnimalDetails() {
-  const card = document.querySelector(".animal-card");
+  const card = document.querySelector('.animal-card');
 
   const selectedAnimalInfo = ANIMALS.find(
     (anim) => anim.name.trim() === activeAnimal
@@ -68,7 +84,7 @@ function showAnimalDetails() {
   }
 
   // Clear existing content
-  card.innerHTML = "";
+  card.innerHTML = '';
 
   const animalDetailsHTML = `
         <div class="selected-animal-details">
@@ -78,13 +94,13 @@ function showAnimalDetails() {
                 <h1 class="animal-title">${selectedAnimalInfo.name}</h1>
                 <p class="animal-description">${selectedAnimalInfo.description}</p>
                 <div class="group-info">
-                    <strong>Group:</strong>
+                    <span class="group-label">Belongs to group </span>
                     <span><a href="./pages/${selectedAnimalInfo.group}.html" class="event-cta">${selectedAnimalInfo.group}</a></span>
-                </div> 
+                </div>
         </div>`;
 
   card.innerHTML = animalDetailsHTML;
-  document.querySelector(".animal-card").style.display = "block";
+  document.querySelector('.animal-card').style.display = 'flex';
 }
 
 function handleAnimalClick(event) {
@@ -94,8 +110,8 @@ function handleAnimalClick(event) {
 
   // Remove active class on all elements
   document
-    .querySelectorAll(".list-item")
-    .forEach((ele) => ele.classList.remove("active"));
+    .querySelectorAll('.list-item')
+    .forEach((ele) => ele.classList.remove('active'));
 
   if (activeAnimal === selectedAnimalText) {
     activeAnimal = undefined;
@@ -104,7 +120,7 @@ function handleAnimalClick(event) {
     showEventDetails();
   } else {
     // Apply active class to selected element
-    selectedElement.classList.add("active");
+    selectedElement.classList.add('active');
     activeAnimal = selectedAnimalText;
     hideEventDetails();
     showAnimalDetails();
@@ -112,22 +128,24 @@ function handleAnimalClick(event) {
 }
 
 function loadSidebarAnimals() {
-  const sidebarElement = document.getElementById("animals-list");
+  const sidebarElement = document.getElementById('animals-list');
 
   ANIMALS.forEach((animal) => {
-    const li = document.createElement("li");
-    const animalName = document.createElement("span");
+    const li = document.createElement('li');
+    const animalName = document.createElement('span');
     animalName.textContent = animal.name;
     li.appendChild(animalName);
-    li.classList.add("list-item");
-    li.addEventListener("click", handleAnimalClick);
+    li.classList.add('list-item');
+    li.addEventListener('click', handleAnimalClick);
     sidebarElement.appendChild(li);
   });
 }
 
 function loadIndexPage() {
+  renderIntroVideo();
   loadSidebarAnimals();
+  hideAnimalDetails();
   showEventDetails();
 }
 
-document.addEventListener("DOMContentLoaded", loadIndexPage);
+document.addEventListener('DOMContentLoaded', loadIndexPage);
