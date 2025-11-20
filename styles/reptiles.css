@@ -101,6 +101,9 @@ aside li.active {
     color: green;
 }
 
+.funfacts {
+    color: green;
+}
 
 .reptiles-details {
     display: flex;
@@ -112,6 +115,7 @@ aside li.active {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border: solid green;
+    min-height: 575px;
 }
 
 .reptiles-img {
