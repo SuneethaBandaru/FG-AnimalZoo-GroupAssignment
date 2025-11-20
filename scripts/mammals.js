@@ -19,7 +19,7 @@ const animals = [
         length: "76cm",
         weight: "10kg",
         found: "Throughout Australia",
-        image: "../images/mammals/echidna1.jpg"
+        image: "../images/mammals/echidna.jpg"
     },
     {
         name: "Tasmanian Devil",
@@ -37,7 +37,7 @@ const animals = [
         length: "70cm",
         weight: "10kg",
         found: "Tasmania",
-        image: "../images/mammals/TasmanianDevil3.jpg"
+        image: "../images/mammals/TasmanianDevil.jpg"
     },
     {
         name: "Quokka",
@@ -57,7 +57,7 @@ const animals = [
         length: "50cm",
         weight: "3kg",
         found: "Rottnest Island and WA mainland",
-        image: "../images/mammals/quokka3.jpg",
+        image: "../images/mammals/quokka.jpg",
     },
 ];
 
@@ -118,18 +118,19 @@ function createListInsideDiv() {
             shortDesc.classList.add("animal-short-desc"); 
 
             const lifespan = document.createElement("p");
-            lifespan.textContent = "Lifespan : " + animal.lifespan;
+            lifespan.innerHTML = `<strong>Lifespan : </strong> ${animal.lifespan}`;
             shortDesc.appendChild(lifespan);
 
             const weight = document.createElement("p");
-            weight.textContent = "Weight : " + animal.weight;
+            weight.innerHTML = `<strong>Weight : </strong> ${animal.weight}`;
             shortDesc.appendChild(weight);
 
             const length = document.createElement("p");
-            length.textContent = "Length : " + animal.length;
+            length.innerHTML = `<strong>Length : </strong> ${animal.length}` ;
             shortDesc.appendChild(length);
+
             const food = document.createElement("p");
-            food.textContent = "Food : " + animal.food;
+            food.innerHTML = `<strong>Food : </strong> ${animal.food}`
             shortDesc.appendChild(food);
 
             const shortDescription = document.createElement("p");
