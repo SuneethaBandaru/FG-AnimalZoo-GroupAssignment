@@ -1,17 +1,17 @@
-/* Main layout */
+
 .content-wrapper {
   display: flex;
   justify-content: center;
   gap: 20px;
   padding: 20px;
   min-height: 15vh;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* prevents stacking */
 }
 
-/* Sidebar */
+
 .sidebar {
   width: 200px;
-  min-height: 100vh;
+  height: 100vh;
   background-color: #316146;
   color: wheat;
   padding-top: 20px;
@@ -37,7 +37,7 @@
   font-weight: bold;
 }
 
-/* Main content */
+
 .main-content {
   flex-grow: 1;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -46,13 +46,13 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   justify-content: center;
   min-width: 100px;
 }
 
 .person {
-  display: none; 
+  display: none;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -79,14 +79,14 @@
   color: black;
 }
 
-/* Read More button */
+
 .read-more-btn {
   display: inline-block;
   margin: 10px 0;
   padding: 10px 20px;
-  background-color: hsl(146, 33%, 29%);
+  background-color: hsl(133, 92%, 31%);
   color: black;
-  border: 2px solid black;
+  border: 2px;
   border-radius: 25px;
   cursor: pointer;
   font-size: 1rem;
@@ -100,7 +100,7 @@
   outline: black;
 }
 
-/* Description toggle */
+/* Description */
 .description {
   max-height: 0;
   overflow: hidden;
@@ -118,65 +118,111 @@
   opacity: 1;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+/* Social Media Icons */
+.socialmedia_icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+  
 }
 
-/* Email links */
+.socialmedia_icons img {
+  width: 25px;
+  height: 30px;
+}
+.email {
+  font-size: 0.2;     
+  color:  #07401b;          /* Dark green color */
+  font-weight: 500;       /* Semi-bold */
+  margin-top: 8px;
+}
+
 .email a {
-  text-decoration: none;
-  color: #0056b3;
-  transition: 0.3s ease;
+  color:     #07401b;   /* Match link color */
+  text-decoration: none;  /* Remove underline */
 }
 
 .email a:hover {
-  color: #ff6600;
-  text-decoration: underline;
+  text-decoration: underline; /* Hover effect */
+  color: #07401b;             /* Darker green on hover */
 }
 
-/* Responsive */
+/* Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 @media (max-width: 1024px) {
-  .content-wrapper { flex-direction: column; align-items: center; }
-  .sidebar { width: 100%; display: flex; overflow-x: auto; margin-bottom: 20px; }
-  .sidebar ul { display: flex; flex-direction: row; gap: 20px; padding: 0 10px; }
-  .sidebar ul li { text-align: center; flex: 0 0 auto; }
+  
+  /* Sidebar stays vertical but becomes narrower so main content fits */
+  .sidebar {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .sidebar ul {
+    display: block; /* vertical menu */
+  }
+
+  .sidebar ul li {
+    padding: 12px 15px;
+  }
+
+  /* Main content stays beside the sidebar */
+  .main-content {
+    flex-grow: 1;
+    width: calc(100% - 170px);
+    padding: 20px;
+  }
 }
 
+/* Mobile screens */
 @media (max-width: 768px) {
-  .main-content { padding: 20px; }
-  .person img { width: 120px; height: 120px; }
+  .sidebar {
+    width: 120px;
+  }
+
+  .sidebar ul li {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .main-content {
+    width: calc(100% - 140px);
+  }
+
+  .person img {
+    width: 120px;
+    height: 120px;
+  }
 }
 
-/* Footer */
-footer {
-  background-color: #316146;
-  color: wheat;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+/* Extra small devices */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100px;
+  }
+
+  .sidebar ul li {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+
+  .main-content {
+    width: calc(100% - 120px);
+  }
+
+  .person img {
+    width: 100px;
+    height: 100px;
+  }
 }
-
-.footer .logo img {
-  width: 110px;
-  height: 110px;
-}
-
-.footer-info { margin: 10px 20px; }
-
-.social_media ul {
-  display: flex;
-  gap: 15px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.social_media a {
-  color: whitesmoke;
-  text-decoration: none;
-}
-
-.social_media a:hover { color: #ffcc00; }
