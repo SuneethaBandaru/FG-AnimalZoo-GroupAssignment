@@ -5,7 +5,8 @@ section {
 
 .container {
   display: flex;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  flex-wrap: wrap;
+  /* Allow wrapping on smaller screens */
 }
 
 /* Sidebar */
@@ -14,7 +15,8 @@ section {
   background-color: #2d6b4a;
   color: white;
   min-height: 850px;
-  flex-shrink: 0; /* Prevent sidebar from shrinking */
+  flex-shrink: 0;
+  /* Prevent sidebar from shrinking */
 }
 
 #sidebar h2 {
@@ -54,7 +56,8 @@ section {
   flex: 1;
   background-color: white;
   padding: 40px;
-  min-width: 0; /* Allow content to shrink */
+  min-width: 0;
+  /* Allow content to shrink */
 }
 
 #main h1 {
@@ -182,11 +185,11 @@ section {
   #main {
     padding: 30px;
   }
-  
+
   .animal-card {
     padding: 25px;
   }
-  
+
   .animal-card img {
     max-width: 350px;
     height: 220px;
@@ -198,23 +201,23 @@ section {
   .container {
     flex-direction: column;
   }
-  
+
   #sidebar {
     width: 100%;
     min-height: auto;
     border-bottom: 2px solid #3d8b5f;
   }
-  
+
   #sidebar h2 {
     text-align: center;
   }
-  
+
   #sidebar ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
   }
-  
+
   #sidebar li {
     flex: 0 0 calc(50% - 10px);
     margin: 5px;
@@ -222,20 +225,20 @@ section {
     border-radius: 5px;
     justify-content: center;
   }
-  
+
   #main {
     padding: 20px;
     width: 100%;
   }
-  
+
   #main h1 {
     font-size: 28px;
   }
-  
+
   .animal-card {
     padding: 20px;
   }
-  
+
   .animal-card img {
     max-width: 100%;
     height: auto;
@@ -248,30 +251,30 @@ section {
     flex: 0 0 100%;
     margin: 3px 0;
   }
-  
+
   #main {
     padding: 15px;
   }
-  
+
   #main h1 {
     font-size: 24px;
   }
-  
+
   .animal-card {
     padding: 15px;
   }
-  
+
   .animal-card img {
     height: auto;
     max-height: 200px;
   }
-  
+
   .animal-card .description,
   .animal-card .diet,
   .full-description p {
     font-size: 14px;
   }
-  
+
   .read-more-btn {
     width: 100%;
     padding: 12px;
@@ -284,20 +287,20 @@ section {
     font-size: 20px;
     padding: 20px 15px;
   }
-  
+
   #sidebar li {
     font-size: 14px;
     padding: 12px 15px;
   }
-  
+
   #main {
     padding: 10px;
   }
-  
+
   #main h1 {
     font-size: 22px;
   }
-  
+
   .animal-card {
     padding: 12px;
   }
