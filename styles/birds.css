@@ -6,6 +6,7 @@ section {
 .container {
   display: flex;
   flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  z-index: -1;
 }
 
 /* Sidebar */
@@ -54,8 +55,7 @@ section {
   flex: 1;
   background-color: white;
   padding: 40px;
-  min-width: 0;
-  z-index: -1;
+  min-width: 0; /* Allow content to shrink */
 }
 
 #main h1 {
