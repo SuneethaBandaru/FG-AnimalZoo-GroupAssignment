@@ -1,21 +1,19 @@
-/* Main Section */
 section {
   min-height: calc(100vh - 200px);
 }
 
 .container {
   display: flex;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  flex-wrap: wrap;
   z-index: -1;
 }
 
-/* Sidebar */
 #sidebar {
   width: 240px;
   background-color: #2d6b4a;
   color: white;
   min-height: 850px;
-  flex-shrink: 0; /* Prevent sidebar from shrinking */
+  flex-shrink: 0;
 }
 
 #sidebar h2 {
@@ -50,12 +48,11 @@ section {
   background-color: #4a9d6f;
 }
 
-/* Main Content Area */
 #main {
   flex: 1;
   background-color: white;
   padding: 40px;
-  min-width: 0; /* Allow content to shrink */
+  min-width: 0;
 }
 
 #main h1 {
@@ -70,7 +67,6 @@ section {
   color: #333;
 }
 
-/* Animal Card */
 .animal-card {
   background-color: white;
   padding: 30px;
@@ -141,7 +137,6 @@ section {
   text-decoration: underline;
 }
 
-/* Read More Button */
 .read-more-btn {
   background-color: #3d8b5f;
   color: white;
@@ -159,7 +154,6 @@ section {
   background-color: #2d6b4a;
 }
 
-/* Full Content - displayed as normal text */
 .full-content {
   margin: 20px 0;
 }
@@ -171,14 +165,10 @@ section {
   font-size: 16px;
 }
 
-/* Short content wrapper */
 .short-content {
   display: block;
 }
 
-/* Responsive Design */
-
-/* Tablets and smaller laptops */
 @media screen and (max-width: 1024px) {
   #main {
     padding: 30px;
@@ -194,7 +184,6 @@ section {
   }
 }
 
-/* Tablets Portrait */
 @media screen and (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -243,7 +232,6 @@ section {
   }
 }
 
-/* Mobile Devices */
 @media screen and (max-width: 480px) {
   #sidebar li {
     flex: 0 0 100%;
@@ -279,7 +267,6 @@ section {
   }
 }
 
-/* Small Mobile Devices */
 @media screen and (max-width: 360px) {
   #sidebar h2 {
     font-size: 20px;
