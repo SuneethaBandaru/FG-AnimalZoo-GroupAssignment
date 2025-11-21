@@ -1,138 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/reset.css" />
-    <link rel="stylesheet" href="./styles/common.css" />
-    <link rel="stylesheet" href="./styles/index.css" />
-    <script
-      src="https://kit.fontawesome.com/20b9975a2f.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="./scripts/data.js"></script>
-    <script src="./scripts/index.js"></script>
-    <title>Zoo park</title>
-  </head>
 
-  <body>
-    <header>
-      <nav class="navbar">
-        <div class="logo">
-          <a href="./index.html">
-            <img
-              width="80"
-              height="80"
-              src="./images/logo.png"
-              alt="Animals logo"
-            />
-          </a>
-        </div>
-        <!-- Hamburger menu -->
-        <input
-          type="checkbox"
-          name="menu-toggle"
-          id="menu-toggle"
-          class="menu-toggle"
-        />
-        <label for="menu-toggle" class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-        <ul class="nav-links">
-          <li class="active"><a href="./index.html">Home</a></li>
-          <li><a href="./pages/birds.html">Birds</a></li>
-          <li><a href="./pages/mammals.html">Mammals</a></li>
-          <li><a href="./pages/reptiles.html">Reptiles</a></li>
-          <li><a href="./pages/about.html">About Us</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <div class="intro-video-container"></div>
-      <div class="main-content">
-        <!-- Side bar -->
-        <aside class="sidebar">
-          <h1>Animals</h1>
-          <ul id="animals-list"></ul>
-        </aside>
-        <div class="container">
-          <!-- Event details will be populated here -->
-          <div class="event-card"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./styles/reset.css" />
+  <link rel="stylesheet" href="./styles/common.css" />
+  <link rel="stylesheet" href="./styles/index.css" />
+  <script src="https://kit.fontawesome.com/20b9975a2f.js" crossorigin="anonymous"></script>
+  <script src="./scripts/data.js"></script>
+  <script src="./scripts/index.js"></script>
+  <title>Zoo park</title>
+</head>
 
-          <!--Selected Animal details will be populated here -->
-          <div class="animal-card"></div>
-        </div>
-      </div>
-    </main>
-
-    <div class="scrolling-animals">
-      <div class="scrolling-animals-track">
-        <img src="./images/kookaburra.png" alt="Kookaburra" />
-        <img src="./images/cockatoo.png" alt="Cockatoo" />
-        <img src="./images/emu.jpeg" alt="Emu" />
-        <img src="./images/cassowary.png" alt="Cassowary" />
-        <img src="./images/echidna.png" alt="Echidna" />
-        <img src="./images/quokka.png" alt="Quokka" />
-        <img src="./images/tasmanian devil.png" alt="Tasmanian Devil" />
-        <img src="./images/frilled neck lizard.png" alt="Frilled Neck Lizard" />
-        <img
-          src="./images/hawksbill_sea_turtle.png"
-          alt="Hawksbill Sea Turtle"
-        />
-        <!-- Duplicate for seamless loop -->
-        <img src="./images/kookaburra.png" alt="Kookaburra" />
-        <img src="./images/cockatoo.png" alt="Cockatoo" />
-        <img src="./images/emu.jpeg" alt="Emu" />
-        <img src="./images/cassowary.png" alt="Cassowary" />
-        <img src="./images/echidna.png" alt="Echidna" />
-        <img src="./images/quokka.png" alt="Quokka" />
-        <img src="./images/tasmanian devil.png" alt="Tasmanian Devil" />
-        <img src="./images/frilled neck lizard.png" alt="Frilled Neck Lizard" />
-        <img
-          src="./images/hawksbill_sea_turtle.png"
-          alt="Hawksbill Sea Turtle"
-        />
-      </div>
-    </div>
-    <footer class="footer">
+<body>
+  <header>
+    <nav class="navbar">
       <div class="logo">
         <a href="./index.html">
-          <img src="./images/logo.png" alt="animals-logo" />
+          <img width="80" height="80" src="./images/logo.png" alt="Animals logo" />
         </a>
       </div>
-      <div class="footer-info">
-        <strong>Address:</strong><br />
-        123 Web Street, Suite 404<br />
-        Australia<br />
-        (555) 123-4567<br />
-        info@example.com
+      <!-- Hamburger menu -->
+      <input type="checkbox" name="menu-toggle" id="menu-toggle" class="menu-toggle" />
+      <label for="menu-toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <ul class="nav-links">
+        <li class="active"><a href="./index.html">Home</a></li>
+        <li><a href="./pages/birds.html">Birds</a></li>
+        <li><a href="./pages/mammals.html">Mammals</a></li>
+        <li><a href="./pages/reptiles.html">Reptiles</a></li>
+        <li><a href="./pages/about.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="intro-video-container"></div>
+    <div class="main-content">
+      <!-- Side bar -->
+      <aside class="sidebar">
+        <h1>Animals</h1>
+        <ul id="animals-list"></ul>
+      </aside>
+      <div class="container">
+        <!-- Event details will be populated here -->
+        <div class="event-card"></div>
+
+        <!--Selected Animal details will be populated here -->
+        <div class="animal-card"></div>
       </div>
-      <div class="social_media">
-        <ul>
-          <li>
-            <a href="https://www.facebook.com/"
-              ><i class="fa-brands fa-facebook"></i>Facebook</a
-            >
-          </li>
-          <li>
-            <a href="https://www.instagram.com/"
-              ><i class="fa-brands fa-instagram"></i>Instagram</a
-            >
-          </li>
-          <li>
-            <a href="https://x.com/"
-              ><i class="fa-brands fa-twitter"></i>Twitter</a
-            >
-          </li>
-          <li>
-            <a href="https://github.com/"
-              ><i class="fa-brands fa-github"></i>GitHub</a
-            >
-          </li>
-        </ul>
-      </div>
-    </footer>
-  </body>
+    </div>
+  </main>
+
+  <div class="scrolling-animals">
+    <div class="scrolling-animals-track">
+      <img src="./images/kookaburra.png" alt="Kookaburra" />
+      <img src="./images/cockatoo.png" alt="Cockatoo" />
+      <img src="./images/emu.jpeg" alt="Emu" />
+      <img src="./images/cassowary.png" alt="Cassowary" />
+      <img src="./images/echidna.png" alt="Echidna" />
+      <img src="./images/quokka.png" alt="Quokka" />
+      <img src="./images/tasmanian devil.png" alt="Tasmanian Devil" />
+      <img src="./images/frilled neck lizard.png" alt="Frilled Neck Lizard" />
+      <img src="./images/hawksbill_sea_turtle.png" alt="Hawksbill Sea Turtle" />
+      <!-- Duplicate for seamless loop -->
+      <img src="./images/kookaburra.png" alt="Kookaburra" />
+      <img src="./images/cockatoo.png" alt="Cockatoo" />
+      <img src="./images/emu.jpeg" alt="Emu" />
+      <img src="./images/cassowary.png" alt="Cassowary" />
+      <img src="./images/echidna.png" alt="Echidna" />
+      <img src="./images/quokka.png" alt="Quokka" />
+      <img src="./images/tasmanian devil.png" alt="Tasmanian Devil" />
+      <img src="./images/frilled neck lizard.png" alt="Frilled Neck Lizard" />
+      <img src="./images/hawksbill_sea_turtle.png" alt="Hawksbill Sea Turtle" />
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="logo">
+      <a href="./index.html">
+        <img src="./images/logo.png" alt="animals-logo" />
+      </a>
+    </div>
+    <div class="footer-info">
+      <strong>Address:</strong><br />
+      123 Web Street, Suite 404<br />
+      Australia<br />
+      (555) 123-4567<br />
+      info@example.com
+    </div>
+    <div class="social_media">
+      <ul>
+        <li>
+          <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i>Facebook</a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i>Instagram</a>
+        </li>
+        <li>
+          <a href="https://x.com/"><i class="fa-brands fa-twitter"></i>Twitter</a>
+        </li>
+        <li>
+          <a href="https://github.com/"><i class="fa-brands fa-github"></i>GitHub</a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+</body>
+
 </html>

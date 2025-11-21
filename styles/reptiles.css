@@ -105,6 +105,10 @@ aside li.active {
     color: green;
 }
 
+.future-reptiles h2 {
+    color: green;
+}
+
 .reptiles-details {
     display: flex;
     flex-wrap: wrap;
