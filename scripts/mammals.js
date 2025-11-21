@@ -69,7 +69,7 @@ const mainContainer = document.getElementById("mainContent");
 
 const img = document.createElement("img");
 img.src = "../images/mammals/mammals_welcome.png";
-img.classList.add("animal-image");
+img.classList.add("welcome-image");
 mainContainer.appendChild(img);
 
 const welcomeText = document.createElement("div");
