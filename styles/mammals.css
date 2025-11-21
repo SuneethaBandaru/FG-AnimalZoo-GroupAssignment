@@ -25,7 +25,12 @@ main {
     text-align: center;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
-
+    cursor: pointer;
+    
+}
+.sidebar a {
+    text-decoration: none;
+    color:var(--primary-text-color); ;
 }
 
 /* Style for all li items */
@@ -64,11 +69,17 @@ main {
     color: black;
     font-size: 1.3rem;
     margin-top: 20px;
-    line-height: 1.6;
+    line-height: 1.8;
     font-weight: 400;
     opacity: 1;
 }
-
+.welcome-image {
+    width: 40vw;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+    margin: 0 auto 5px auto;
+}
 /* Style for the animal name heading */
 .animal-name {
     font-size: 2rem;
@@ -76,7 +87,6 @@ main {
     color: black;
     letter-spacing: 1px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-    margin-bottom: 10px;
     text-transform: uppercase;
     text-align: center;
     transition: color 0.3s;
@@ -91,7 +101,6 @@ main {
 .animal-short-desc {
     font-family: "Texturina", serif;
     font-size: 1.1rem;
-    margin-bottom: 5px;
 }
 
 /* Read More / Read Less links */
@@ -102,7 +111,7 @@ main {
     color: #2e8b57;
     cursor: pointer;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     text-decoration: underline;
 }
 
@@ -110,8 +119,8 @@ main {
 .animal-full-desc {
     font-family: "Texturina", serif;
     font-size: 1.1rem;
-    overflow: hidden;
-    margin-top: 10px;
+    overflow: auto;
+    margin-top: 5px;
     align-items: center;
     /* Horizontal centering */
     justify-content: center;
@@ -135,7 +144,7 @@ main {
     height: auto;
     display: block;
     border-radius: 20px;
-    margin: 0 auto 10px auto;
+    margin: 0 auto 5px auto;
 }
 
 /* Responsive layout */
@@ -153,5 +162,9 @@ main {
     main {
         padding: 15px;
         flex-direction: column;
+    }
+
+    .animal-full-desc {
+        overflow: scroll;
     }
 }
