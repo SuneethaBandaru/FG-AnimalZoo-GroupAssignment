@@ -14,7 +14,7 @@ main {
     width: 250px;
     background: var(--bg-color);
     padding: 20px;
-    height: 100vh;
+    height: 100%;
     flex-shrink: 0;
 }
 
@@ -75,15 +75,17 @@ main {
     opacity: 1;
 }
 .welcome-image {
-    width: 40vw;
+    width: 100%;
+    max-width: 700px;
     height: auto;
     display: block;
     border-radius: 20px;
     margin: 0 auto 5px auto;
+    object-fit: cover;
 }
 /* Style for the animal name heading */
 .animal-name {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
     color: black;
     letter-spacing: 1px;
@@ -136,20 +138,22 @@ main {
     flex-direction: column;
     text-align: center;
     padding: 20px;
-    height: 100vh;
+    height: 100%;
     flex: 1;
 }
 
 /* Animal image */
 .animal-image {
-    width: 30vw;
+    width: 100%;
+    max-width: 380px;
     display: block;
     border-radius: 20px;
     margin: 0 auto 5px auto;
+    object-fit: cover;
 }
 
 /* Responsive layout */
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
     body {
         flex-direction: column;
     }
@@ -162,9 +166,7 @@ main {
         padding: 15px;
         flex-direction: column;
     }
-    .animal-full-desc {
-        overflow: scroll;
-    }
+    
     #mainContent{
         height: auto;
     }
@@ -183,7 +185,7 @@ main {
     }
     .welcome-image,
     .animal-image {
-        width: 60vw;
+        max-width: 100%;
         height: auto;
         margin-bottom: 10px;
     }
@@ -196,27 +198,18 @@ main {
     body {
         flex-direction: column;
     }
-    main {
-        padding: 15px;
-        flex-direction: column;
-    }
-    .animal-full-desc,
-    .animal-short-desc {
-        font-size: 1.6rem;
-    }
-    .animal-full-desc{
-        overflow: scroll;
-    }
+   
+    
     .animal-name,
     .read-less,
     .read-more  {
     font-size: 1.4rem;
     margin-bottom: 5px;
     }
-    .animal-image
+    .animal-image,
     .welcome-image {
         width: 100%;
-        max-width: 350px;
+        max-width: 500px;
         margin-bottom: 5px;
     }     
 }
